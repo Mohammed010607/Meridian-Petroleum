@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
 <style>
 :root{
-  --paper:#F6F5F2; --surface:#FFFFFF; --surface-2:#EDEAE3;
+  --paper:#F7F5F1; --surface:#FFFFFF; --surface-2:#E8E2D6;
   --ink:#111E23; --body:#3C484D; --muted:#657277; --line:#DBD7CF; --line-soft:#E6E2DA;
   --brass:#9C630F; --brass-soft:#F2E7D2; --teal:#1C5C69; --alarm:#A8402A;
   --deep:#0D181D; --deep-2:#16262D; --deep-line:#2B3C44;
@@ -20,7 +20,7 @@
   --e3:0 8px 18px rgba(17,30,35,.13), 0 30px 56px -14px rgba(17,30,35,.32);
   --raised:#FFFFFF; --edge:0 0 0 0 rgba(0,0,0,0);
   --wrap:1220px; --gut:clamp(1.15rem,4vw,3rem);
-  --fs-display:clamp(2.1rem,1.15rem + 3.2vw,3.75rem);
+  --fs-display:clamp(2.3rem,1.2rem + 4.1vw,4.7rem);
   --fs-h2:clamp(1.58rem,1.14rem + 1.5vw,2.35rem);
   --fs-h3:clamp(1.06rem,.99rem + .4vw,1.28rem);
   --r:5px; --r-lg:10px; color-scheme:light;
@@ -34,14 +34,14 @@
    here, so the cream ground is what everyone sees until they ask otherwise. */
 :root[data-theme="dark"]{
   color-scheme:dark;
-  --paper:#0B1216; --surface:#131F24; --surface-2:#101A1F;
-  --ink:#EFEDE7; --body:#B7C1C4; --muted:#8B98A0; --line:#233238; --line-soft:#1B282E;
+  --paper:#080F13; --surface:#1C2A32; --surface-2:#111C22;
+  --ink:#F1EFE9; --body:#BFC9CD; --muted:#93A0A7; --line:#2E4049; --line-soft:#22323A;
   --brass:#DCA13A; --brass-soft:#2A2013; --teal:#63AAB6; --alarm:#E8886F;
-  --deep:#070E12; --deep-2:#132126; --deep-line:#24343B;
+  --deep:#04090C; --deep-2:#132228; --deep-line:#2B3D45;
   --e1:0 1px 2px rgba(0,0,0,.5), 0 4px 12px -3px rgba(0,0,0,.45);
   --e2:0 3px 10px rgba(0,0,0,.55), 0 18px 34px -10px rgba(0,0,0,.6);
   --e3:0 8px 20px rgba(0,0,0,.6), 0 34px 60px -16px rgba(0,0,0,.7);
-  --raised:#18262C; --edge:inset 0 1px 0 rgba(255,255,255,.055);
+  --raised:#243540; --edge:inset 0 1px 0 rgba(255,255,255,.07);
   --c1:#BE8419; --c2:#159C90; --c3:#6F8FE3; --c4:#D2604C; --c5:#AC6CC1;
   --grid:#223036; --axis:#76858B;
 }
@@ -112,7 +112,7 @@ img,svg{max-width:100%}
 .subnav a[aria-current="page"]{color:var(--brass);background:var(--brass-soft);font-weight:600}
 
 /* ── SLB-style photo stage: zoom out, crossfade ── */
-.stage{position:relative;height:clamp(505px,76vh,725px);overflow:hidden;background:var(--deep);border-bottom:1px solid var(--deep-line)}
+.stage{position:relative;height:clamp(545px,80vh,790px);overflow:hidden;background:var(--deep);border-bottom:1px solid var(--deep-line)}
 .slides{position:absolute;inset:0;z-index:0;isolation:isolate}
 /* The incoming slide fades in *over* the outgoing one, which holds underneath —
    no dip to background mid-fade, and no dependency on transitions firing. */
@@ -150,7 +150,7 @@ img,svg{max-width:100%}
 
 /* interior page header, with photo */
 .pagehead{background:var(--deep);color:var(--on-deep-muted);position:relative;overflow:hidden}
-.pagehead::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 130% at 90% 0%, rgba(217,155,46,.15), transparent 60%);pointer-events:none}
+.pagehead::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(90% 130% at 88% -10%, rgba(217,155,46,.22), transparent 58%),radial-gradient(70% 110% at 0% 100%, rgba(28,92,105,.26), transparent 62%)}
 .pagehead::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;background-image:var(--grain);mix-blend-mode:overlay}
 .pagehead .wrap{position:relative;z-index:2;padding-block:clamp(2.3rem,5vw,3.9rem);display:flex;flex-direction:column;gap:.85rem;align-items:flex-start}
 .pagehead h1{color:var(--on-deep);font-size:clamp(1.9rem,1.3rem + 2.3vw,3.05rem)}
@@ -169,7 +169,8 @@ img,svg{max-width:100%}
 /* sections */
 .section{padding-block:clamp(2.8rem,6vw,5rem)}
 .section--alt{background:linear-gradient(180deg,var(--surface-2) 0%,var(--paper) 78%);border-block:1px solid var(--line)}
-.sechead{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2.2rem;max-width:64ch}
+.sechead{display:flex;flex-direction:column;gap:.8rem;margin-bottom:2.4rem;max-width:64ch}
+.sechead h2{font-size:clamp(1.95rem,1.25rem + 2.5vw,3.25rem);letter-spacing:-.032em;line-height:1.08}
 .sechead-row{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:flex-end;justify-content:space-between;margin-bottom:2.2rem}
 .sechead-row .sechead{margin-bottom:0}
 
@@ -285,8 +286,8 @@ img,svg{max-width:100%}
 .related a:hover{color:var(--brass);text-decoration:none}
 .related .arrow{color:var(--brass)}
 
-.cta{background:var(--deep);color:var(--on-deep-muted);position:relative;overflow:hidden}
-.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 130% at 12% 50%, rgba(217,155,46,.16), transparent 60%);pointer-events:none}
+.cta{background:linear-gradient(170deg,var(--deep-2),var(--deep) 65%);color:var(--on-deep-muted);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(70% 130% at 10% 40%, rgba(217,155,46,.22), transparent 58%),radial-gradient(60% 120% at 95% 100%, rgba(28,92,105,.3), transparent 60%)}
 .cta::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.045;background-image:var(--grain);mix-blend-mode:overlay}
 .cta .wrap{position:relative;z-index:2;padding-block:clamp(2.5rem,5vw,3.9rem);display:flex;flex-wrap:wrap;gap:1.75rem;align-items:center;justify-content:space-between}
 .cta h2{color:var(--on-deep);max-width:20ch}
@@ -403,6 +404,26 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
 .mapkey b{font-weight:600}
 .mapkey span{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-left:auto;text-align:right}
 .mapnote{margin-top:1rem;font-size:.83rem;color:var(--muted);line-height:1.55}
+
+
+/* A showpiece band: dark whatever the theme, so the page has a rhythm
+   instead of one continuous sheet of cream. */
+.section--show{position:relative;overflow:hidden;border-block:1px solid var(--deep-line);
+  background:linear-gradient(175deg,var(--deep-2) 0%,var(--deep) 62%,#060D11 100%)}
+.section--show::before{content:"";position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(85% 55% at 12% -5%, rgba(217,155,46,.20), transparent 58%),
+  radial-gradient(75% 65% at 95% 105%, rgba(28,92,105,.34), transparent 60%)}
+.section--show::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.055;
+  background-image:var(--grain);mix-blend-mode:overlay}
+.section--show .wrap{position:relative;z-index:2}
+.section--show h2{color:#F5F3EE}
+.section--show .lede,.section--show .mapnote{color:var(--on-deep-muted)}
+.section--show .eyebrow{color:var(--brass-bright)}
+.section--show .mapkey{border-top-color:rgba(255,255,255,.16)}
+.section--show .mapkey li{border-bottom-color:rgba(255,255,255,.09)}
+.section--show .mapkey a{color:#E8E9E7}
+.section--show .mapkey a:hover{color:var(--brass-bright)}
+.section--show .mapwrap{border-color:rgba(255,255,255,.14);background:transparent;box-shadow:none}
 
 /* ── charts ── */
 .charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(1.25rem,2.5vw,2rem)}
@@ -941,7 +962,7 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
       return '<li><a href="#/services/'+st.slug+'"><b>'+esc(st.label)+'</b></a></li>';
     }).join("");
 
-    return '<section class="section section--alt"><div class="wrap">'+
+    return '<section class="section section--show"><div class="wrap">'+
       '<div class="sechead"><p class="eyebrow">Where we operate</p>'+
       '<h2>Six countries, one operating centre.</h2>'+
       '<p class="lede">Every asset Meridian runs sits within the Gulf and the Gulf of Oman. '+
