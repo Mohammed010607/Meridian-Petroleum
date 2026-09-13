@@ -4,4 +4,3 @@ __pycache__/
 
 # intermediate build output (index.html is the real artefact)
 src/meridian-petroleum.html
-.claude/
