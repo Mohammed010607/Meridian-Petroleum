@@ -1,8 +1,9 @@
 <title>Meridian Type Options</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&family=JetBrains+Mono:wght@400;500&family=Cairo:wght@400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&family=Work+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&family=Zilla+Slab:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Nunito+Sans:wght@400;600&family=DM+Mono:wght@400;500&family=Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600&family=Archivo+Black&family=Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Readex+Pro:wght@400;500;600;700&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&family=Martian+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Archivo:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&family=JetBrains+Mono:wght@400;500&family=Work+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,700&family=Playfair+Display:wght@400;700;800;900&family=Instrument+Serif:ital@0;1&family=Libre+Baskerville:wght@400;700&family=Lora:wght@400;500;600;700&family=Spectral:wght@400;600;700&family=EB+Garamond:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Source+Sans+3:wght@400;500;600&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400;500;600;700&family=Roboto+Slab:wght@400;500;700;800&family=Roboto:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,700&family=Nunito+Sans:wght@400;600&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&family=Oswald:wght@400;500;600;700&family=Archivo+Black&family=Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Readex+Pro:wght@400;500;600;700&family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&family=Markazi+Text:wght@400;500;600;700&family=Martian+Mono:wght@400;700&display=swap">
 <style>
 :root{
   --paper:#F6F5F2; --surface:#FFFFFF; --surface-2:#EDEAE3;
@@ -119,8 +120,8 @@ pre{margin:.9rem 0 0;background:var(--surface-2);border:1px solid var(--line);bo
 
 <header class="top"><div class="wrap">
   <p class="eyebrow">Meridian Petroleum &#183; typography</p>
-  <h1>Thirteen type options, shown on the real page.</h1>
-  <p>Each option is the actual Meridian layout &#8212; hero, headline figures, capability cards and the asset register &#8212; redrawn in a different typeface pairing. They are grouped by the kind of letterform, so the differences between groups are large. Pick one and apply it to the site using the font link and variables shown below.</p>
+  <h1>Twenty-two type options, shown on the real page.</h1>
+  <p>Each option is the actual Meridian layout &#8212; hero, headline figures, capability cards and the asset register &#8212; redrawn in a different typeface pairing. Grouped by the kind of letterform, with thirteen serif options across display, text, slab and Arabic. The pairing in use on the site now is first.</p>
 </div></header>
 
 <nav class="picker" aria-label="Type options"><div class="wrap" id="opts"></div></nav>
@@ -186,83 +187,137 @@ pre{margin:.9rem 0 0;background:var(--surface-2);border:1px solid var(--line);bo
 (function(){
   "use strict";
   var OPTIONS = [
-    { key:"meridian", name:"Meridian", tag:"Current", group:"Current",
-      disp:'"Archivo"', sans:'"IBM Plex Sans"', mono:'"IBM Plex Mono"', w:800, tr:"-.035em",
-      dispName:"Archivo 800", sansName:"IBM Plex Sans", monoName:"IBM Plex Mono",
-      desc:"An industrial American grotesque with a technical companion. Neutral and engineering-adjacent \u2014 it gets out of the way and lets the numbers carry the page. This is what the site uses today.",
-      fams:"Archivo:wght@400..800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600" },
-
-    { key:"register", name:"Register", tag:"Book serif", group:"Serif",
-      disp:'"Source Serif 4"', sans:'"Archivo"', mono:'"JetBrains Mono"', w:700, tr:"-.018em",
-      dispName:"Source Serif 4 700", sansName:"Archivo", monoName:"JetBrains Mono",
-      desc:"Serif headlines over a grotesque body. Reads like an annual report or a long-established major \u2014 institutional rather than new. Best if you want Meridian to feel decades old.",
-      fams:"Source+Serif+4:opsz,wght@8..60,400;8..60,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500" },
-
-    { key:"bodoni", name:"Bodoni", tag:"High contrast", group:"Serif",
-      disp:'"Bodoni Moda"', sans:'"Work Sans"', mono:'"Roboto Mono"', w:700, tr:"-.015em",
-      dispName:"Bodoni Moda 700", sansName:"Work Sans", monoName:"Roboto Mono",
-      desc:"Hairline thin strokes against heavy thick ones. The most formal and the most fashion-adjacent option here \u2014 it would make Meridian read as a premium, heritage brand rather than an operator.",
-      fams:"Bodoni+Moda:opsz,wght@6..96,400;6..96,700&family=Work+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
-
-    { key:"anvil", name:"Anvil", tag:"Slab serif", group:"Serif",
-      disp:'"Zilla Slab"', sans:'"Source Sans 3"', mono:'"Roboto Mono"', w:700, tr:"-.02em",
-      dispName:"Zilla Slab 700", sansName:"Source Sans 3", monoName:"Roboto Mono",
-      desc:"Blunt rectangular serifs \u2014 the letterform of stencils, machinery plates and railway signage. Solid and unfussy, and the most physically industrial of the serif options.",
-      fams:"Zilla+Slab:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
-
-    { key:"fraunces", name:"Fraunces", tag:"Soft serif", group:"Serif",
-      disp:'"Fraunces"', sans:'"Nunito Sans"', mono:'"DM Mono"', w:700, tr:"-.02em",
-      dispName:"Fraunces 700", sansName:"Nunito Sans", monoName:"DM Mono",
-      desc:"A warm serif with deliberately odd, soft details in the letterforms. Friendlier and more human than anything else on this list \u2014 it pulls Meridian away from heavy industry and toward people.",
-      fams:"Fraunces:opsz,wght@9..144,400;9..144,700&family=Nunito+Sans:wght@400;600&family=DM+Mono:wght@400;500" },
-
-    { key:"signal", name:"Signal", tag:"Condensed", group:"Display & sans",
-      disp:'"Oswald"', sans:'"Public Sans"', mono:'"IBM Plex Mono"', w:600, tr:"-.005em",
-      dispName:"Oswald 600", sansName:"Public Sans", monoName:"IBM Plex Mono",
-      desc:"Tall, narrow capitals borrowed from wayfinding and signage. Fits far more words on a headline line than anything else here, and reads unmistakably as infrastructure.",
-      fams:"Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600" },
-
-    { key:"block", name:"Block", tag:"Ultra bold", group:"Display & sans",
-      disp:'"Archivo Black"', sans:'"Archivo"', mono:'"Roboto Mono"', w:400, tr:"-.03em",
-      dispName:"Archivo Black", sansName:"Archivo", monoName:"Roboto Mono",
-      desc:"One very heavy weight, used large. Loud, confident and poster-like \u2014 the headline becomes the loudest thing on the page rather than a label above the photograph.",
-      fams:"Archivo+Black&family=Archivo:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
-
-    { key:"expanse", name:"Expanse", tag:"Wide geometric", group:"Display & sans",
-      disp:'"Unbounded"', sans:'"Manrope"', mono:'"Space Mono"', w:700, tr:"-.04em",
-      dispName:"Unbounded 700", sansName:"Manrope", monoName:"Space Mono",
-      desc:"Unusually wide, circular letterforms. Modern and slightly futuristic \u2014 this is how energy and technology companies have been setting type recently, and it leans hard on the transition side of the business.",
-      fams:"Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700" },
-
-    { key:"bricolage", name:"Bricolage", tag:"Contemporary", group:"Display & sans",
-      disp:'"Bricolage Grotesque"', sans:'"Work Sans"', mono:'"DM Mono"', w:800, tr:"-.03em",
-      dispName:"Bricolage Grotesque 800", sansName:"Work Sans", monoName:"DM Mono",
-      desc:"A grotesque with intentional irregularities \u2014 slightly off-model curves and terminals that give it character up close while staying sober at a distance. Distinctive without being decorative.",
-      fams:"Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Work+Sans:wght@400;500;600&family=DM+Mono:wght@400;500" },
-
-    { key:"terminal", name:"Terminal", tag:"Monospace", group:"Display & sans",
-      disp:'"Martian Mono"', sans:'"IBM Plex Sans"', mono:'"IBM Plex Mono"', w:700, tr:"-.06em",
-      dispName:"Martian Mono 700", sansName:"IBM Plex Sans", monoName:"IBM Plex Mono",
-      desc:"Headlines set in a monospace, where every letter occupies the same width. Technical and instrument-like \u2014 it makes the whole page feel like a readout. The boldest departure from a conventional corporate look.",
-      fams:"Martian+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600" },
-
-    { key:"gulf", name:"Gulf", tag:"Arabic-ready", group:"Arabic-ready",
+    { key:"gulf", name:"Gulf", tag:"In use now", group:"Currently applied",
       disp:'"Cairo"', sans:'"IBM Plex Sans Arabic"', mono:'"IBM Plex Mono"', w:900, tr:"-.02em",
       dispName:"Cairo 900", sansName:"IBM Plex Sans Arabic", monoName:"IBM Plex Mono",
-      desc:"Both faces carry full Arabic alphabets alongside Latin. The practical choice for a Muscat company \u2014 if you add an Arabic edition later, the type already works and both versions look like one brand.",
+      desc:"What the site uses today. Both faces carry full Arabic alphabets alongside Latin, so an Arabic edition would use the same type and look like one brand.",
       fams:"Cairo:wght@400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600" },
 
-    { key:"khaleej", name:"Khaleej", tag:"Arabic, rounded", group:"Arabic-ready",
-      disp:'"Readex Pro"', sans:'"Readex Pro"', mono:'"IBM Plex Mono"', w:700, tr:"-.025em",
-      dispName:"Readex Pro 700", sansName:"Readex Pro", monoName:"IBM Plex Mono",
-      desc:"Arabic and Latin drawn together as one family, softer and rounder than Cairo. One typeface does both headline and body, which keeps the page very consistent.",
-      fams:"Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600" },
+    { key:"playfair", name:"Playfair", tag:"High contrast", group:"Serif \u2014 display",
+      disp:'"Playfair Display"', sans:'"Source Sans 3"', mono:'"Roboto Mono"', w:800, tr:"-.015em",
+      dispName:"Playfair Display 800", sansName:"Source Sans 3", monoName:"Roboto Mono",
+      desc:"Thick-to-thin strokes with a calligraphic origin. Confident and a little ornate \u2014 the most classically \u2018prestige\u2019 of the serifs here.",
+      fams:"Playfair+Display:wght@400;700;800;900&family=Source+Sans+3:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
 
-    { key:"amiri", name:"Amiri", tag:"Arabic, traditional", group:"Arabic-ready",
+    { key:"bodoni", name:"Bodoni", tag:"Didone", group:"Serif \u2014 display",
+      disp:'"Bodoni Moda"', sans:'"Work Sans"', mono:'"Roboto Mono"', w:700, tr:"-.015em",
+      dispName:"Bodoni Moda 700", sansName:"Work Sans", monoName:"Roboto Mono",
+      desc:"Hairline serifs against heavy stems. Colder and more fashion-adjacent than Playfair; it would make Meridian read as a luxury house rather than an operator.",
+      fams:"Bodoni+Moda:opsz,wght@6..96,400;6..96,700&family=Work+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
+
+    { key:"instrument", name:"Instrument", tag:"Editorial display", group:"Serif \u2014 display",
+      disp:'"Instrument Serif"', sans:'"DM Sans"', mono:'"DM Mono"', w:400, tr:"-.01em",
+      dispName:"Instrument Serif", sansName:"DM Sans", monoName:"DM Mono",
+      desc:"One elegant weight, meant to be set large. Tall and narrow with fine detail \u2014 quiet on the page but unmistakable in a headline.",
+      fams:"Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500" },
+
+    { key:"register", name:"Register", tag:"Book serif", group:"Serif \u2014 text",
+      disp:'"Source Serif 4"', sans:'"Archivo"', mono:'"JetBrains Mono"', w:700, tr:"-.018em",
+      dispName:"Source Serif 4 700", sansName:"Archivo", monoName:"JetBrains Mono",
+      desc:"A workhorse book serif over a grotesque. Institutional and unfussy \u2014 reads like an annual report from a company that has been around for decades.",
+      fams:"Source+Serif+4:opsz,wght@8..60,400;8..60,700&family=Archivo:wght@400;500;600&family=JetBrains+Mono:wght@400;500" },
+
+    { key:"baskerville", name:"Baskerville", tag:"Classical", group:"Serif \u2014 text",
+      disp:'"Libre Baskerville"', sans:'"Archivo"', mono:'"Roboto Mono"', w:700, tr:"-.008em",
+      dispName:"Libre Baskerville 700", sansName:"Archivo", monoName:"Roboto Mono",
+      desc:"An eighteenth-century revival, wide and generously spaced. The most traditional option here \u2014 it suggests age and permanence more than design.",
+      fams:"Libre+Baskerville:wght@400;700&family=Archivo:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
+
+    { key:"garamond", name:"Garamond", tag:"Old style", group:"Serif \u2014 text",
+      disp:'"EB Garamond"', sans:'"Work Sans"', mono:'"JetBrains Mono"', w:600, tr:"-.005em",
+      dispName:"EB Garamond 600", sansName:"Work Sans", monoName:"JetBrains Mono",
+      desc:"Renaissance letterforms with a low, calm contrast. Softer and more humane than Baskerville; sets long paragraphs beautifully.",
+      fams:"EB+Garamond:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500" },
+
+    { key:"lora", name:"Lora", tag:"Brushed serif", group:"Serif \u2014 text",
+      disp:'"Lora"', sans:'"Source Sans 3"', mono:'"Roboto Mono"', w:700, tr:"-.012em",
+      dispName:"Lora 700", sansName:"Source Sans 3", monoName:"Roboto Mono",
+      desc:"Contemporary serif with brush-drawn curves. Warmer than a book face and more modern than a revival \u2014 a comfortable middle ground.",
+      fams:"Lora:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
+
+    { key:"spectral", name:"Spectral", tag:"Screen serif", group:"Serif \u2014 text",
+      disp:'"Spectral"', sans:'"Public Sans"', mono:'"DM Mono"', w:700, tr:"-.015em",
+      dispName:"Spectral 700", sansName:"Public Sans", monoName:"DM Mono",
+      desc:"Drawn for screens rather than adapted from print. Low contrast and sturdy, so it holds up at small sizes and in dark mode better than most serifs.",
+      fams:"Spectral:wght@400;600;700&family=Public+Sans:wght@400;500;600&family=DM+Mono:wght@400;500" },
+
+    { key:"newsreader", name:"Newsreader", tag:"News serif", group:"Serif \u2014 text",
+      disp:'"Newsreader"', sans:'"Public Sans"', mono:'"Roboto Mono"', w:600, tr:"-.01em",
+      dispName:"Newsreader 600", sansName:"Public Sans", monoName:"Roboto Mono",
+      desc:"Built for reportage, with optical sizing so headlines tighten up automatically. Gives the site an editorial, published-today feel.",
+      fams:"Newsreader:opsz,wght@6..72,400;6..72,600;6..72,700&family=Public+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
+
+    { key:"anvil", name:"Anvil", tag:"Slab", group:"Serif \u2014 slab",
+      disp:'"Zilla Slab"', sans:'"Source Sans 3"', mono:'"Roboto Mono"', w:700, tr:"-.02em",
+      dispName:"Zilla Slab 700", sansName:"Source Sans 3", monoName:"Roboto Mono",
+      desc:"Blunt rectangular serifs \u2014 the lettering of stencils, machinery plates and railway signage. The most physically industrial serif on the list.",
+      fams:"Zilla+Slab:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
+
+    { key:"robotoslab", name:"Foundry", tag:"Slab, neutral", group:"Serif \u2014 slab",
+      disp:'"Roboto Slab"', sans:'"Roboto"', mono:'"Roboto Mono"', w:700, tr:"-.022em",
+      dispName:"Roboto Slab 700", sansName:"Roboto", monoName:"Roboto Mono",
+      desc:"A slab with the corners taken off \u2014 solid and engineering-minded without Zilla\u2019s quirk. The safest of the slab options.",
+      fams:"Roboto+Slab:wght@400;500;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500" },
+
+    { key:"fraunces", name:"Fraunces", tag:"Soft serif", group:"Serif \u2014 slab",
+      disp:'"Fraunces"', sans:'"Nunito Sans"', mono:'"DM Mono"', w:700, tr:"-.02em",
+      dispName:"Fraunces 700", sansName:"Nunito Sans", monoName:"DM Mono",
+      desc:"A warm serif with deliberately odd, soft details. Friendlier and more human than anything else here \u2014 it pulls Meridian away from heavy industry and toward people.",
+      fams:"Fraunces:opsz,wght@9..144,400;9..144,700&family=Nunito+Sans:wght@400;600&family=DM+Mono:wght@400;500" },
+
+    { key:"amiri", name:"Amiri", tag:"Arabic serif", group:"Arabic-ready",
       disp:'"Amiri"', sans:'"Tajawal"', mono:'"IBM Plex Mono"', w:700, tr:"-.01em",
       dispName:"Amiri 700", sansName:"Tajawal", monoName:"IBM Plex Mono",
-      desc:"A revival of classical Arabic book typography, paired with a clean modern Arabic sans for body text. The most rooted and least international-corporate option here.",
-      fams:"Amiri:wght@400;700&family=Tajawal:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600" }
+      desc:"A revival of classical Arabic book typography, paired with a clean modern Arabic sans. A true serif that also sets Arabic \u2014 the most rooted option here.",
+      fams:"Amiri:wght@400;700&family=Tajawal:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600" },
+
+    { key:"markazi", name:"Markazi", tag:"Arabic serif", group:"Arabic-ready",
+      disp:'"Markazi Text"', sans:'"IBM Plex Sans Arabic"', mono:'"IBM Plex Mono"', w:700, tr:"-.01em",
+      dispName:"Markazi Text 700", sansName:"IBM Plex Sans Arabic", monoName:"IBM Plex Mono",
+      desc:"Arabic and Latin drawn together as one serif, based on Persian naskh. Lighter and more contemporary than Amiri while still unmistakably regional.",
+      fams:"Markazi+Text:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600" },
+
+    { key:"khaleej", name:"Khaleej", tag:"Arabic sans", group:"Arabic-ready",
+      disp:'"Readex Pro"', sans:'"Readex Pro"', mono:'"IBM Plex Mono"', w:700, tr:"-.025em",
+      dispName:"Readex Pro 700", sansName:"Readex Pro", monoName:"IBM Plex Mono",
+      desc:"Arabic and Latin in one family, softer and rounder than Cairo. A single typeface does both headline and body, which keeps the page very consistent.",
+      fams:"Readex+Pro:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600" },
+
+    { key:"meridian", name:"Meridian", tag:"Grotesque", group:"Sans & display",
+      disp:'"Archivo"', sans:'"IBM Plex Sans"', mono:'"IBM Plex Mono"', w:800, tr:"-.035em",
+      dispName:"Archivo 800", sansName:"IBM Plex Sans", monoName:"IBM Plex Mono",
+      desc:"The original pairing: an industrial American grotesque with a technical companion. Neutral and engineering-adjacent.",
+      fams:"Archivo:wght@400;500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600" },
+
+    { key:"signal", name:"Signal", tag:"Condensed", group:"Sans & display",
+      disp:'"Oswald"', sans:'"Public Sans"', mono:'"IBM Plex Mono"', w:600, tr:"-.005em",
+      dispName:"Oswald 600", sansName:"Public Sans", monoName:"IBM Plex Mono",
+      desc:"Tall, narrow capitals borrowed from wayfinding and signage. Fits far more words on a headline line than anything else here.",
+      fams:"Oswald:wght@400;500;600;700&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600" },
+
+    { key:"block", name:"Block", tag:"Ultra bold", group:"Sans & display",
+      disp:'"Archivo Black"', sans:'"Archivo"', mono:'"Roboto Mono"', w:400, tr:"-.03em",
+      dispName:"Archivo Black", sansName:"Archivo", monoName:"Roboto Mono",
+      desc:"One very heavy weight, used large. Loud and poster-like \u2014 the headline becomes the loudest thing on the page.",
+      fams:"Archivo+Black&family=Archivo:wght@400;500;600&family=Roboto+Mono:wght@400;500" },
+
+    { key:"expanse", name:"Expanse", tag:"Wide geometric", group:"Sans & display",
+      disp:'"Unbounded"', sans:'"Manrope"', mono:'"Space Mono"', w:700, tr:"-.04em",
+      dispName:"Unbounded 700", sansName:"Manrope", monoName:"Space Mono",
+      desc:"Unusually wide, circular letterforms. Modern and slightly futuristic \u2014 it leans hard on the energy-transition side of the business.",
+      fams:"Unbounded:wght@400;600;700;800&family=Manrope:wght@400;500;600&family=Space+Mono:wght@400;700" },
+
+    { key:"bricolage", name:"Bricolage", tag:"Contemporary", group:"Sans & display",
+      disp:'"Bricolage Grotesque"', sans:'"Work Sans"', mono:'"DM Mono"', w:800, tr:"-.03em",
+      dispName:"Bricolage Grotesque 800", sansName:"Work Sans", monoName:"DM Mono",
+      desc:"A grotesque with intentional irregularities \u2014 character up close, sober at a distance. Distinctive without being decorative.",
+      fams:"Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Work+Sans:wght@400;500;600&family=DM+Mono:wght@400;500" },
+
+    { key:"terminal", name:"Terminal", tag:"Monospace", group:"Sans & display",
+      disp:'"Martian Mono"', sans:'"IBM Plex Sans"', mono:'"IBM Plex Mono"', w:700, tr:"-.06em",
+      dispName:"Martian Mono 700", sansName:"IBM Plex Sans", monoName:"IBM Plex Mono",
+      desc:"Headlines set in a monospace, every letter the same width. Instrument-like \u2014 it makes the page feel like a readout.",
+      fams:"Martian+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600" }
   ];
 
   var root = document.documentElement, host = document.getElementById("opts");
