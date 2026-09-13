@@ -1,19 +1,11 @@
 # Wrap the artifact build in real HTML boilerplate for self-hosting.
 # The artifact platform injects <!doctype>/<html>/<head>; a static host does not.
-import io, os, sys, shutil, urllib.parse
+import io, os, sys, shutil
 sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-_logo = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 34">'
-         '<rect x="1" y="1" width="32" height="32" rx="2" fill="#D99B2E"/>'
-         '<path d="M17 5.5V28.5M6 17H28" stroke="#0D181D" stroke-width="1.6" fill="none"/>'
-         '<circle cx="17" cy="17" r="8.5" fill="none" stroke="#0D181D" stroke-width="1.6"/>'
-         '<path d="M17 17L23.2 11.4" stroke="#0D181D" stroke-width="2.4" fill="none" stroke-linecap="round"/>'
-         '<circle cx="17" cy="17" r="2" fill="#0D181D"/></svg>')
-
-# Favicon and link-preview tags only matter when self-hosted, so they are added
-# here rather than in the shared template (the artifact has its own favicon).
+# The favicon lives in template.html so every build has it. These are
+# link-preview tags, which only matter once the site is hosted at a URL.
 DEPLOY_HEAD = (
-    '<link rel="icon" href="data:image/svg+xml,' + urllib.parse.quote(_logo, safe="") + '">\n'
     '<meta property="og:type" content="website">\n'
     '<meta property="og:site_name" content="Meridian Petroleum">\n'
     '<meta property="og:title" content="Meridian Petroleum">\n'
