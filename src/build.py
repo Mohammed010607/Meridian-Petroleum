@@ -1,6 +1,7 @@
 import json,re,sys,html
 sys.stdout.reconfigure(encoding="utf-8",errors="replace")
 imgs=json.load(open("imgs.json"))
+geo=open("map.json",encoding="ascii").read()
 creds=json.load(open("credits.json",encoding="utf-8"))
 tpl=open("template.html",encoding="utf-8").read()
 
@@ -35,10 +36,11 @@ block=('<p>All photographs are freely licensed works sourced from Wikimedia Comm
        '<p style="margin-top:.5rem">'+' &#183; '.join(items)+'</p>')
 
 out=tpl.replace("__IMGS__", json.dumps(imgs))
+out=out.replace("__MAP__", geo)
 out=out.replace("__CREDITMAP__", json.dumps(cmap, ensure_ascii=False))
 out=out.replace("__CREDITS__", block)
 
-assert "__IMGS__" not in out and "__CREDITMAP__" not in out and "__CREDITS__" not in out
+assert "__MAP__" not in out and "__IMGS__" not in out and "__CREDITMAP__" not in out and "__CREDITS__" not in out
 open("meridian-petroleum.html","w",encoding="utf-8").write(out)
 print("built  %.2f MB" % (len(out.encode())/1024/1024))
 for k,v in cmap.items(): print("  ",k,"->",v[:78])
