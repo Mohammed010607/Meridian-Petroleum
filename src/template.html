@@ -11,7 +11,7 @@
 :root{
   --paper:#F7F5F1; --surface:#FFFFFF; --surface-2:#E8E2D6;
   --ink:#111E23; --body:#3C484D; --muted:#657277; --line:#DBD7CF; --line-soft:#E6E2DA;
-  --brass:#9C630F; --brass-soft:#F2E7D2; --teal:#1C5C69; --alarm:#A8402A;
+  --brass:#875409; --brass-soft:#F2E7D2; --teal:#1C5C69; --alarm:#A8402A;
   --deep:#0D181D; --deep-2:#16262D; --deep-line:#2B3C44;
   --on-deep:#F2F0EB; --on-deep-muted:#A5B1B5; --brass-bright:#D99B2E;
   /* elevation: warm-tinted rather than pure black, to sit with the neutrals */
@@ -24,6 +24,9 @@
   --fs-h2:clamp(1.58rem,1.14rem + 1.5vw,2.35rem);
   --fs-h3:clamp(1.06rem,.99rem + .4vw,1.28rem);
   --r:5px; --r-lg:10px; color-scheme:light;
+  /* type scale - floor 12px, every size on the page is one of these */
+  --t1:.75rem; --t2:.8125rem; --t3:.875rem; --t4:.9375rem;
+  --t5:1rem; --t6:1.15rem; --t7:1.4rem;
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   --sans:"Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
   --disp:"Roboto Slab",Georgia,"Times New Roman",serif;
@@ -60,11 +63,11 @@ ul{margin:0;padding:0;list-style:none}
 img,svg{max-width:100%}
 :focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;border-radius:2px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
-.eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.eyebrow{font-family:var(--mono);font-size:var(--t1);font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
 .lede{font-size:clamp(1.02rem,.98rem + .3vw,1.16rem);line-height:1.62;max-width:62ch}
 .prose{max-width:68ch;display:flex;flex-direction:column;gap:1rem}
 
-.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.875rem;font-weight:600;padding:.72rem 1.35rem;border-radius:var(--r);border:1px solid transparent;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:var(--t4);font-weight:600;padding:.72rem 1.35rem;border-radius:var(--r);border:1px solid transparent;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
 .btn:hover{text-decoration:none}
 .btn:active{transform:translateY(1px)}
 .btn-primary{background:var(--brass-bright);color:#1A1204;border-color:var(--brass-bright);box-shadow:0 1px 2px rgba(17,30,35,.14),0 4px 10px -3px rgba(180,120,20,.4)}
@@ -73,18 +76,18 @@ img,svg{max-width:100%}
 .btn-ghost:hover{border-color:#FFF;background:rgba(8,14,18,.5)}
 .btn-outline{background:transparent;color:var(--ink);border-color:var(--line)}
 .btn-outline:hover{border-color:var(--brass);color:var(--brass)}
-.btn-sm{padding:.44rem .9rem;font-size:.8rem}
+.btn-sm{padding:.44rem .9rem;font-size:var(--t3)}
 .arrow{transition:transform .18s ease}
 .btn:hover .arrow,.cardlink:hover .arrow,.related a:hover .arrow{transform:translateX(3px)}
 
 /* utility + masthead */
-.utility{background:var(--deep-2);color:var(--on-deep-muted);font-size:.755rem;border-bottom:1px solid var(--deep-line)}
+.utility{background:var(--deep-2);color:var(--on-deep-muted);font-size:var(--t2);border-bottom:1px solid var(--deep-line)}
 .utility .wrap{display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;align-items:center;justify-content:space-between;min-height:38px;padding-block:.4rem}
 .offices-inline{display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;font-family:var(--mono)}
 .offices-inline b{color:var(--on-deep);font-weight:500}
-.accred{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.695rem;letter-spacing:.11em;text-transform:uppercase}
+.accred{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:var(--t1);letter-spacing:.11em;text-transform:uppercase}
 .accred::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brass-bright);flex:none}
-.themetoggle{display:inline-flex;align-items:center;gap:.4rem;min-height:30px;padding:.25rem .6rem;background:transparent;border:1px solid var(--deep-line);border-radius:99px;color:var(--on-deep-muted);cursor:pointer;font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;transition:color .18s ease,border-color .18s ease,background .18s ease}
+.themetoggle{display:inline-flex;align-items:center;gap:.4rem;min-height:30px;padding:.25rem .6rem;background:transparent;border:1px solid var(--deep-line);border-radius:99px;color:var(--on-deep-muted);cursor:pointer;font-family:var(--mono);font-size:var(--t1);letter-spacing:.1em;text-transform:uppercase;transition:color .18s ease,border-color .18s ease,background .18s ease}
 .themetoggle:hover{color:var(--on-deep);border-color:var(--brass-bright);background:rgba(255,255,255,.05)}
 .themetoggle .t-sun{display:none}
 :root[data-theme="dark"] .themetoggle .t-sun{display:block}
@@ -94,20 +97,20 @@ img,svg{max-width:100%}
 .masthead .wrap{display:flex;align-items:center;gap:1.5rem;min-height:74px;position:relative}
 .brand{display:flex;align-items:center;gap:.72rem;color:var(--on-deep);flex:none}
 .brand:hover{text-decoration:none}
-.brand-name{font-family:var(--disp);font-weight:800;font-size:1.04rem;line-height:1.05;text-transform:uppercase}
-.brand-sub{display:block;font-family:var(--mono);font-size:.585rem;letter-spacing:.2em;color:var(--on-deep-muted);text-transform:uppercase;font-weight:400;margin-top:.2rem}
+.brand-name{font-family:var(--disp);font-weight:800;font-size:var(--t5);line-height:1.05;text-transform:uppercase}
+.brand-sub{display:block;font-family:var(--mono);font-size:var(--t1);letter-spacing:.2em;color:var(--on-deep-muted);text-transform:uppercase;font-weight:400;margin-top:.2rem}
 .nav{display:flex;align-items:center;gap:.3rem;margin-left:auto}
-.nav a{position:relative;color:var(--on-deep);font-size:.9rem;font-weight:500;padding:.55rem .85rem;border-radius:var(--r)}
+.nav a{position:relative;color:var(--on-deep);font-size:var(--t4);font-weight:500;padding:.55rem .85rem;border-radius:var(--r)}
 .nav a:hover{text-decoration:none;color:#fff}
 .nav a::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:-.4rem;height:3px;background:var(--brass-bright);transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
 .nav a:hover::after{transform:scaleX(.5)}
 .nav a[aria-current="page"]::after{transform:scaleX(1)}
 .nav .btn{margin-left:.7rem}
 .nav .btn::after{display:none}
-.navtoggle{display:none;align-items:center;min-height:44px;background:transparent;border:1px solid rgba(242,240,235,.35);color:var(--on-deep);border-radius:var(--r);padding:.5rem .95rem;margin-left:auto;cursor:pointer;font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+.navtoggle{display:none;align-items:center;min-height:44px;background:transparent;border:1px solid rgba(242,240,235,.35);color:var(--on-deep);border-radius:var(--r);padding:.5rem .95rem;margin-left:auto;cursor:pointer;font-family:var(--mono);font-size:var(--t2);letter-spacing:.12em;text-transform:uppercase}
 .subnav{background:var(--surface-2);border-bottom:1px solid var(--line)}
 .subnav .wrap{display:flex;gap:.2rem;align-items:center;overflow-x:auto;min-height:50px}
-.subnav a{white-space:nowrap;font-size:.83rem;font-weight:500;color:var(--body);padding:.5rem .8rem;border-radius:var(--r)}
+.subnav a{white-space:nowrap;font-size:var(--t3);font-weight:500;color:var(--body);padding:.5rem .8rem;border-radius:var(--r)}
 .subnav a:hover{color:var(--ink);text-decoration:none}
 .subnav a[aria-current="page"]{color:var(--brass);background:var(--brass-soft);font-weight:600}
 
@@ -138,11 +141,11 @@ img,svg{max-width:100%}
 .stage-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.25rem}
 .stage-nav{position:absolute;left:0;right:0;bottom:0;z-index:3}
 .stage-nav .wrap{display:flex;gap:0;align-items:stretch;border-top:1px solid rgba(255,255,255,.22)}
-.dot{flex:1;min-width:0;background:transparent;border:0;border-right:1px solid rgba(255,255,255,.16);cursor:pointer;text-align:left;padding:.85rem .9rem 1rem;color:rgba(255,255,255,.62);font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;position:relative;transition:color .25s ease,background .25s ease}
+.dot{flex:1;min-width:0;background:transparent;border:0;border-right:1px solid rgba(255,255,255,.16);cursor:pointer;text-align:left;padding:.85rem .9rem 1rem;color:rgba(255,255,255,.62);font-family:var(--mono);font-size:var(--t1);letter-spacing:.1em;text-transform:uppercase;position:relative;transition:color .25s ease,background .25s ease}
 .dot:last-child{border-right:0}
 .dot:hover{color:#FFF;background:rgba(255,255,255,.08)}
 .dot .n{display:block;font-weight:600;margin-bottom:.2rem}
-.dot .t{display:block;font-family:var(--sans);font-size:.79rem;letter-spacing:0;text-transform:none;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dot .t{display:block;font-family:var(--sans);font-size:var(--t2);letter-spacing:0;text-transform:none;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dot[aria-selected="true"]{color:#FFF}
 .dot::after{content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--brass-bright)}
 .dot[aria-selected="true"]::after{animation:dotfill 9s linear forwards}
@@ -161,7 +164,7 @@ img,svg{max-width:100%}
 .pagehead--photo h1,.pagehead--photo .lede{color:#FFF}
 .pagehead--photo .lede{color:rgba(255,255,255,.88)}
 .pagehead--photo .crumbs,.pagehead--photo .crumbs a{color:rgba(255,255,255,.78)}
-.crumbs{display:flex;flex-wrap:wrap;gap:.45rem;font-family:var(--mono);font-size:.695rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-deep-muted)}
+.crumbs{display:flex;flex-wrap:wrap;gap:.45rem;font-family:var(--mono);font-size:var(--t1);letter-spacing:.1em;text-transform:uppercase;color:var(--on-deep-muted)}
 .crumbs a{color:var(--on-deep-muted)}
 .crumbs a:hover{color:var(--brass-bright)}
 .crumbs span{opacity:.45}
@@ -177,7 +180,7 @@ img,svg{max-width:100%}
 .creds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0}
 .creds > div{padding:1.4rem 1.5rem 1.4rem 0;border-right:1px solid var(--line)}
 .creds > div:last-child{border-right:0}
-.creds dt{font-family:var(--mono);font-size:.665rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.creds dt{font-family:var(--mono);font-size:var(--t1);letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
 .creds dd{margin:0;font-family:var(--disp);font-size:clamp(1.45rem,1.05rem + 1.2vw,2rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
 .creds dd small{font-size:.5em;font-weight:600;color:var(--brass);letter-spacing:.02em}
 
@@ -190,10 +193,10 @@ img,svg{max-width:100%}
 .svc-art{position:relative;aspect-ratio:88/57;overflow:hidden;background:var(--deep);border-bottom:1px solid var(--line)}
 .svc-art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .svc-card:hover .svc-art img{transform:scale(1.045)}
-.svc-art .tagchip{position:absolute;left:0;bottom:0;background:rgba(7,14,18,.82);color:#FFF;font-family:var(--mono);font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;padding:.35rem .7rem}
+.svc-art .tagchip{position:absolute;left:0;bottom:0;background:rgba(7,14,18,.82);color:#FFF;font-family:var(--mono);font-size:var(--t1);letter-spacing:.13em;text-transform:uppercase;padding:.35rem .7rem}
 .svc-body{padding:1.3rem 1.4rem 1.45rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
-.svc-body p{font-size:.92rem}
-.cardlink{margin-top:auto;padding-top:.7rem;display:inline-flex;align-items:center;gap:.4rem;font-size:.83rem;font-weight:600;color:var(--brass)}
+.svc-body p{font-size:var(--t4)}
+.cardlink{margin-top:auto;padding-top:.7rem;display:inline-flex;align-items:center;gap:.4rem;font-size:var(--t3);font-weight:600;color:var(--brass)}
 .svc-card h3 a{color:var(--ink)}
 .svc-card:hover h3 a{color:var(--brass)}
 .svc-card h3 a:hover{text-decoration:none}
@@ -209,11 +212,11 @@ img,svg{max-width:100%}
   background:linear-gradient(90deg,var(--brass),var(--line));opacity:.55}
 .seq li:last-child::after{display:none}
 .seq .step{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;
-  border-radius:50%;background:var(--brass);color:var(--surface);font-family:var(--mono);font-size:.72rem;
+  border-radius:50%;background:var(--brass);color:var(--surface);font-family:var(--mono);font-size:var(--t2);
   font-weight:600;letter-spacing:0;flex:none}
-.seq h3{font-size:1.05rem}
-.seq p{font-size:.885rem}
-.seq .dur{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:auto;padding-top:.7rem;
+.seq h3{font-size:var(--t5)}
+.seq p{font-size:var(--t4)}
+.seq .dur{font-family:var(--mono);font-size:var(--t1);color:var(--muted);margin-top:auto;padding-top:.7rem;
   border-top:1px solid var(--line-soft)}
 
 /* full-bleed feature band */
@@ -226,61 +229,61 @@ img,svg{max-width:100%}
 
 .standards{background:linear-gradient(180deg,var(--deep-2),var(--deep));color:var(--on-deep-muted)}
 .standards .wrap{display:flex;flex-wrap:wrap;gap:.9rem 2.25rem;align-items:center;padding-block:1.45rem}
-.standards .lab{font-family:var(--mono);font-size:.675rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-deep);flex:none}
+.standards .lab{font-family:var(--mono);font-size:var(--t1);letter-spacing:.16em;text-transform:uppercase;color:var(--on-deep);flex:none}
 .standards ul{display:flex;flex-wrap:wrap;gap:.5rem}
-.standards li{font-family:var(--mono);font-size:.73rem;border:1px solid var(--deep-line);border-radius:var(--r);padding:.32rem .62rem}
+.standards li{font-family:var(--mono);font-size:var(--t2);border:1px solid var(--deep-line);border-radius:var(--r);padding:.32rem .62rem}
 
 .news{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
 .news article{position:relative;display:flex;flex-direction:column;gap:.6rem;background:var(--raised);
   border:1px solid var(--line);border-radius:var(--r-lg);padding:1.4rem 1.45rem 1.5rem;
   box-shadow:var(--e1),var(--edge);transition:box-shadow .25s ease,transform .25s ease,border-color .2s ease}
 .news article:hover{box-shadow:var(--e2),var(--edge);transform:translateY(-3px);border-color:var(--brass)}
-.news .meta{display:flex;flex-wrap:wrap;gap:.45rem .8rem;align-items:center;font-family:var(--mono);font-size:.645rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.news .meta{display:flex;flex-wrap:wrap;gap:.45rem .8rem;align-items:center;font-family:var(--mono);font-size:var(--t1);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .news .cat{color:var(--brass);font-weight:600;background:var(--brass-soft);padding:.24rem .55rem;border-radius:99px}
-.news h3{font-size:1.14rem;line-height:1.28}
-.news p{font-size:.9rem}
+.news h3{font-size:var(--t6);line-height:1.28}
+.news p{font-size:var(--t4)}
 
 /* headline figures, straight under the page header */
 .kpiband{position:relative;z-index:4;margin-top:-52px;background:transparent}
 .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0;background:linear-gradient(180deg,var(--deep-2),var(--deep));border:1px solid var(--deep-line);border-radius:var(--r-lg);box-shadow:var(--e3);overflow:hidden;position:relative}
 .kpis > div{padding:1.5rem clamp(.9rem,1.6vw,1.5rem) 1.6rem clamp(1rem,1.8vw,1.6rem);border-right:1px solid var(--deep-line);display:flex;flex-direction:column;gap:.5rem;justify-content:space-between}
 .kpis > div:last-child{border-right:0}
-.kpis dt{font-family:var(--mono);font-size:.645rem;letter-spacing:.13em;text-transform:uppercase;color:var(--on-deep-muted)}
+.kpis dt{font-family:var(--mono);font-size:var(--t1);letter-spacing:.13em;text-transform:uppercase;color:var(--on-deep-muted)}
 .kpis dd{margin:0;display:flex;align-items:baseline;gap:.42rem;flex-wrap:wrap}
 .kpis .fig{font-family:var(--disp);font-size:clamp(1.45rem,1.05rem + 1.3vw,2.1rem);font-weight:700;color:var(--on-deep);letter-spacing:-.025em;font-variant-numeric:tabular-nums;line-height:1}
-.kpis .unit{font-size:.79rem;color:var(--brass-bright);font-weight:600;line-height:1.3}
+.kpis .unit{font-size:var(--t2);color:var(--brass-bright);font-weight:600;line-height:1.3}
 
 /* capabilities as titled blocks, not a list */
 .caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,246px),1fr));gap:1rem}
 .caps article{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);padding:1.3rem 1.35rem 1.4rem;display:flex;flex-direction:column;gap:.55rem;box-shadow:var(--e1),var(--edge);transition:border-color .2s ease,box-shadow .25s ease,transform .25s ease}
 .caps article:hover{border-color:var(--brass);box-shadow:var(--e2),var(--edge);transform:translateY(-2px)}
-.caps h3{font-size:1rem}
+.caps h3{font-size:var(--t5)}
 .caps h3::before{content:"";display:block;width:24px;height:2px;background:var(--brass);margin-bottom:.8rem}
-.caps p{font-size:.885rem}
+.caps p{font-size:var(--t4)}
 
 /* asset register - a portfolio table, not a spec sheet */
 .regwrap{overflow-x:auto}
 .register{width:100%;min-width:460px;border-collapse:collapse}
-.register th{text-align:left;font-family:var(--mono);font-size:.635rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:0 1rem .75rem 0;border-bottom:2px solid var(--ink)}
+.register th{text-align:left;font-family:var(--mono);font-size:var(--t1);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:0 1rem .75rem 0;border-bottom:2px solid var(--ink)}
 .register th:last-child,.register td:last-child{text-align:right;padding-right:0}
 .register td{padding:1rem 1rem 1rem 0;border-bottom:1px solid var(--line-soft);vertical-align:baseline}
 .register tbody tr:last-child td{border-bottom:0}
-.register .nm{font-family:var(--disp);font-weight:700;font-size:1rem;letter-spacing:-.014em;color:var(--ink);width:54%;transition:color .18s ease}
-.register .sc{font-family:var(--mono);font-size:.81rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.register .nm{font-family:var(--disp);font-weight:700;font-size:var(--t5);letter-spacing:-.014em;color:var(--ink);width:54%;transition:color .18s ease}
+.register .sc{font-family:var(--mono);font-size:var(--t3);color:var(--muted);font-variant-numeric:tabular-nums}
 .register tbody tr:hover .nm{color:var(--brass)}
 
 /* remaining specification, as a figure grid rather than rows of a table */
 .specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,196px),1fr));border-top:1px solid var(--line);margin:0}
 .specs > div{padding:1.05rem 1.3rem 1.15rem 0;border-bottom:1px solid var(--line-soft);display:flex;flex-direction:column;gap:.32rem}
-.specs dt{font-family:var(--mono);font-size:.635rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.specs dd{margin:0;font-family:var(--mono);font-size:.92rem;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.4}
-.specnote{margin-top:1rem;font-size:.83rem;color:var(--muted);max-width:64ch;line-height:1.55}
+.specs dt{font-family:var(--mono);font-size:var(--t1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.specs dd{margin:0;font-family:var(--mono);font-size:var(--t4);color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.4}
+.specnote{margin-top:1rem;font-size:var(--t3);color:var(--muted);max-width:64ch;line-height:1.55}
 
 /* where we operate */
 .geo li{padding:.72rem 0;border-bottom:1px solid var(--line-soft);display:flex;flex-direction:column;gap:.18rem}
 .geo li:last-child{border-bottom:0}
-.geo .c{font-weight:600;color:var(--ink);font-size:.9rem}
-.geo .a{font-size:.81rem;color:var(--muted);line-height:1.45}
+.geo .c{font-weight:600;color:var(--ink);font-size:var(--t4)}
+.geo .a{font-size:var(--t3);color:var(--muted);line-height:1.45}
 
 .detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,336px);gap:clamp(2rem,4vw,3.5rem);align-items:start}
 .detail-main{display:flex;flex-direction:column;gap:2.4rem;min-width:0}
@@ -288,13 +291,13 @@ img,svg{max-width:100%}
 .block h2{font-size:clamp(1.26rem,1.1rem + .7vw,1.6rem)}
 .aside{display:flex;flex-direction:column;gap:1.15rem;position:sticky;top:98px}
 .panel{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-lg);padding:1.25rem 1.35rem;display:flex;flex-direction:column;gap:.75rem;box-shadow:var(--e1),var(--edge)}
-.panel h3{font-size:.95rem}
+.panel h3{font-size:var(--t5)}
 .panel--deep{background:var(--deep-2);border-color:var(--deep-line);color:var(--on-deep-muted)}
 .panel--deep h3{color:var(--on-deep)}
 .panel--deep .eyebrow{color:var(--brass-bright)}
 .related li{border-bottom:1px solid var(--line-soft)}
 .related li:last-child{border-bottom:0}
-.related a{display:flex;justify-content:space-between;gap:.75rem;align-items:center;padding:.6rem 0;font-size:.89rem;color:var(--ink);font-weight:500}
+.related a{display:flex;justify-content:space-between;gap:.75rem;align-items:center;padding:.6rem 0;font-size:var(--t4);color:var(--ink);font-weight:500}
 .related a:hover{color:var(--brass);text-decoration:none}
 .related .arrow{color:var(--brass)}
 
@@ -312,36 +315,36 @@ img,svg{max-width:100%}
 .offices{display:flex;flex-direction:column;gap:1.15rem;min-width:0}
 .office{background:var(--raised);border:1px solid var(--line);border-left:3px solid var(--brass);border-radius:var(--r-lg);padding:1.25rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;min-width:0;box-shadow:var(--e1),var(--edge);transition:box-shadow .25s ease,transform .25s ease}
 .office:hover{box-shadow:var(--e2),var(--edge);transform:translateY(-2px)}
-.office address{font-style:normal;font-size:.92rem;line-height:1.6}
-.office dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.28rem .9rem;margin:.4rem 0 0;font-size:.865rem}
-.office dt{font-family:var(--mono);font-size:.655rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:.22rem}
+.office address{font-style:normal;font-size:var(--t4);line-height:1.6}
+.office dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.28rem .9rem;margin:.4rem 0 0;font-size:var(--t4)}
+.office dt{font-family:var(--mono);font-size:var(--t1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:.22rem}
 .office dd{margin:0;font-family:var(--mono);color:var(--ink);font-variant-numeric:tabular-nums;min-width:0;overflow-wrap:anywhere}
 form{background:var(--raised);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(1.3rem,3vw,1.85rem);display:flex;flex-direction:column;gap:1rem;box-shadow:var(--e2),var(--edge)}
 .field{display:flex;flex-direction:column;gap:.38rem}
-.field label{font-family:var(--mono);font-size:.665rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
-.field input,.field select,.field textarea{font-family:var(--sans);font-size:.93rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:.65rem .8rem;width:100%}
+.field label{font-family:var(--mono);font-size:var(--t1);letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{font-family:var(--sans);font-size:var(--t4);color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:.65rem .8rem;width:100%}
 .field textarea{resize:vertical;min-height:112px;line-height:1.55}
 .field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:1}
 .field select[data-empty="true"]{color:var(--muted)}
 .field select option{color:var(--ink);background:var(--surface)}
 .field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--brass);outline-offset:0;border-color:var(--brass)}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.formnote{font-size:.775rem;color:var(--muted);line-height:1.5}
-.formmsg{border:1px solid var(--brass);background:var(--brass-soft);color:var(--ink);border-radius:var(--r);padding:.8rem 1rem;font-size:.88rem;box-shadow:var(--e1)}
-.err{color:var(--alarm);font-size:.755rem;font-family:var(--mono)}
+.formnote{font-size:var(--t2);color:var(--muted);line-height:1.5}
+.formmsg{border:1px solid var(--brass);background:var(--brass-soft);color:var(--ink);border-radius:var(--r);padding:.8rem 1rem;font-size:var(--t4);box-shadow:var(--e1)}
+.err{color:var(--alarm);font-size:var(--t2);font-family:var(--mono)}
 
 footer{background:linear-gradient(180deg,var(--deep-2) 0%,var(--deep) 55%);color:var(--on-deep-muted);border-top:1px solid var(--deep-line);position:relative}
 footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.045;background-image:var(--grain);mix-blend-mode:overlay}
 .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1.3fr 1fr;gap:clamp(1.75rem,3.5vw,3rem);padding-block:clamp(2.4rem,5vw,3.5rem)}
-.foot-grid h4{font-family:var(--mono);font-size:.665rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-deep);font-weight:500;margin-bottom:.9rem}
-.foot-grid li{margin-bottom:.48rem;font-size:.87rem}
+.foot-grid h4{font-family:var(--mono);font-size:var(--t1);letter-spacing:.16em;text-transform:uppercase;color:var(--on-deep);font-weight:500;margin-bottom:.9rem}
+.foot-grid li{margin-bottom:.48rem;font-size:var(--t4)}
 .foot-grid a{color:var(--on-deep-muted)}
 .foot-grid a:hover{color:var(--brass-bright)}
-.foot-about{font-size:.87rem;line-height:1.62;max-width:36ch}
+.foot-about{font-size:var(--t4);line-height:1.62;max-width:36ch}
 .foot-brand{display:flex;align-items:center;gap:.7rem;color:var(--on-deep);margin-bottom:.95rem}
-.foot-addr{font-style:normal;font-size:.855rem;line-height:1.6;margin-bottom:1rem}
-.foot-addr b{color:var(--on-deep);font-weight:500;display:block;font-size:.665rem;font-family:var(--mono);letter-spacing:.13em;text-transform:uppercase;margin-bottom:.28rem}
-.foot-bar{border-top:1px solid var(--deep-line);padding-block:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;justify-content:space-between;align-items:center;font-size:.765rem;font-family:var(--mono)}
+.foot-addr{font-style:normal;font-size:var(--t4);line-height:1.6;margin-bottom:1rem}
+.foot-addr b{color:var(--on-deep);font-weight:500;display:block;font-size:var(--t1);font-family:var(--mono);letter-spacing:.13em;text-transform:uppercase;margin-bottom:.28rem}
+.foot-bar{border-top:1px solid var(--deep-line);padding-block:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;justify-content:space-between;align-items:center;font-size:var(--t2);font-family:var(--mono)}
 .demo-note{opacity:.72}
 
 @media (max-width:1000px){
@@ -412,11 +415,11 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
 .gulfmap a:focus-visible{outline:2px solid var(--brass-bright);outline-offset:2px}
 .mapkey{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
 .mapkey li{border-bottom:1px solid var(--line-soft)}
-.mapkey a{display:flex;align-items:baseline;gap:.6rem;padding:.62rem 0;font-size:.9rem;color:var(--ink)}
+.mapkey a{display:flex;align-items:baseline;gap:.6rem;padding:.62rem 0;font-size:var(--t4);color:var(--ink)}
 .mapkey a:hover{color:var(--brass);text-decoration:none}
 .mapkey b{font-weight:600}
-.mapkey span{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-left:auto;text-align:right}
-.mapnote{margin-top:1rem;font-size:.83rem;color:var(--muted);line-height:1.55}
+.mapkey span{font-family:var(--mono);font-size:var(--t2);color:var(--muted);margin-left:auto;text-align:right}
+.mapnote{margin-top:1rem;font-size:var(--t3);color:var(--muted);line-height:1.55}
 
 
 /* A showpiece band: dark whatever the theme, so the page has a rhythm
@@ -441,8 +444,8 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
 /* ── charts ── */
 .charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:clamp(1.25rem,2.5vw,2rem)}
 .chart{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);padding:1.25rem 1.35rem 1.4rem;display:flex;flex-direction:column;gap:.2rem;min-width:0;box-shadow:var(--e1),var(--edge)}
-.chart h3{font-size:1rem}
-.chart .sub{font-size:.84rem;color:var(--muted);margin-bottom:.9rem}
+.chart h3{font-size:var(--t5)}
+.chart .sub{font-size:var(--t3);color:var(--muted);margin-bottom:.9rem}
 .chart svg{display:block;width:100%;height:auto;overflow:visible}
 .chart .gl{stroke:var(--grid);stroke-width:1}
 .chart .ax{fill:var(--muted);font-family:var(--mono);font-size:11px}
@@ -450,14 +453,14 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
 .chart .cat{fill:var(--body);font-family:var(--sans);font-size:12.5px}
 .chart .bar{fill:var(--c1)}
 .chart .bar.dim{fill:var(--c1);opacity:.45}
-.legend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin-top:.85rem;font-size:.8rem;color:var(--body)}
+.legend{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin-top:.85rem;font-size:var(--t3);color:var(--body)}
 .legend i{display:inline-block;width:22px;height:3px;border-radius:2px;vertical-align:middle;margin-right:.45rem}
-.chart table{width:100%;border-collapse:collapse;font-size:.8rem;margin-top:.9rem}
-.chart caption{text-align:left;font-family:var(--mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:.4rem}
+.chart table{width:100%;border-collapse:collapse;font-size:var(--t3);margin-top:.9rem}
+.chart caption{text-align:left;font-family:var(--mono);font-size:var(--t1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-bottom:.4rem}
 .chart th,.chart td{text-align:left;padding:.3rem .5rem .3rem 0;border-bottom:1px solid var(--line-soft);font-weight:400}
 .chart td{font-family:var(--mono);text-align:right;color:var(--ink)}
 .chart details{margin-top:.5rem}
-.chart summary{font-size:.78rem;color:var(--muted);cursor:pointer;padding:.3rem 0}
+.chart summary{font-size:var(--t2);color:var(--muted);cursor:pointer;padding:.3rem 0}
 .chart summary:hover{color:var(--brass)}
 
 /* ── timeline ── */
@@ -470,10 +473,10 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
 .tl li::before{content:"";position:absolute;top:0;left:1.15rem;right:1.15rem;height:3px;
   background:var(--brass);border-radius:0 0 3px 3px}
 .tl li.future::before{background:repeating-linear-gradient(90deg,var(--brass) 0 5px,transparent 5px 10px)}
-.tl .yr{font-family:var(--disp);font-weight:800;font-size:1.45rem;color:var(--ink);letter-spacing:-.025em;font-variant-numeric:tabular-nums}
+.tl .yr{font-family:var(--disp);font-weight:800;font-size:var(--t7);color:var(--ink);letter-spacing:-.025em;font-variant-numeric:tabular-nums}
 .tl li.future .yr{color:var(--brass)}
-.tl p{font-size:.87rem;line-height:1.5}
-.tl .tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+.tl p{font-size:var(--t4);line-height:1.5}
+.tl .tag{font-family:var(--mono);font-size:var(--t1);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
   margin-top:auto;padding-top:.7rem;border-top:1px solid var(--line-soft)}
 
 /* ── in-page index on service pages ── */
@@ -482,8 +485,8 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
 .toc ol{list-style:none;counter-reset:t;display:flex;flex-direction:column}
 .toc li{counter-increment:t;border-bottom:1px solid var(--line-soft)}
 .toc li:last-child{border-bottom:0}
-.toc button{display:flex;gap:.65rem;align-items:baseline;width:100%;text-align:left;background:none;border:0;padding:.6rem 0;cursor:pointer;font-family:var(--sans);font-size:.88rem;color:var(--body);border-left:2px solid transparent;padding-left:.6rem;margin-left:-.6rem;transition:color .18s ease,border-color .18s ease}
-.toc button::before{content:counter(t,decimal-leading-zero);font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.toc button{display:flex;gap:.65rem;align-items:baseline;width:100%;text-align:left;background:none;border:0;padding:.6rem 0;cursor:pointer;font-family:var(--sans);font-size:var(--t4);color:var(--body);border-left:2px solid transparent;padding-left:.6rem;margin-left:-.6rem;transition:color .18s ease,border-color .18s ease}
+.toc button::before{content:counter(t,decimal-leading-zero);font-family:var(--mono);font-size:var(--t1);color:var(--muted)}
 .toc button:hover{color:var(--ink)}
 .toc button[aria-current="true"]{color:var(--brass);border-left-color:var(--brass);font-weight:600}
 .toc button[aria-current="true"]::before{color:var(--brass)}
@@ -643,16 +646,15 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
       tag:"Upstream",
       img:"card_ep",
       hero:"hero_upstream",
-      card:"Finding and producing oil and gas across Oman, the UAE, Saudi Arabia, Kuwait and Qatar.",
-      lede:"We find oil and gas, drill the wells and bring what comes out to the surface — inland in the desert and offshore in the Gulf.",
+      card:"Production across Oman, the UAE, Saudi Arabia, Kuwait and Qatar.",
+      lede:"Finding and producing oil and gas, offshore in the Gulf and inland in the desert.",
       intro:[
-        "We run 21 oil and gas fields ourselves, and own a share of 14 more that other companies run. About half of what we produce comes from platforms offshore in the Gulf; the rest comes from fields inland in the desert. We prefer fields we operate ourselves, because then we control the costs rather than waiting on a partner to decide.",
-        "We do very little exploring in untested places. Most of our money goes into drilling extra wells in fields we already run, and connecting new discoveries by pipeline back to platforms that are already built and paid for. A well like that starts producing within months instead of years."
+        "We run 21 fields ourselves and hold a share of 14 more. Half our output is offshore, half inland. We spend on extra wells and tiebacks around fields we already operate, so a new well produces in months rather than years."
       ],
       specs:{ caption:"Upstream at a glance", rows:[
         ["Production from fields we run","412,000 barrels a day"],
-        ["Total production including partner shares","587,000 barrels a day"],
-        ["Proven reserves still underground","2.14 billion barrels"],
+        ["Including partner shares","587,000 barrels a day"],
+        ["Proven reserves","2.14 billion barrels"],
         ["New reserves found vs. produced","118%"],
         ["Fields we operate","21"],
         ["Split between oil and gas","54% / 46%"],
@@ -662,11 +664,11 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
         ["Investment budget, 2026","$3.8 billion"]
       ]},
       capabilities:[
-        ["We run the fields","We are the operator on our shallow-water and onshore fields, including two floating production ships."],
-        ["Connecting new finds","New discoveries are piped back to platforms we already own, instead of building another one."],
-        ["Drilling between wells","Extra wells drilled into fields already in production, planned on a rolling three-year schedule."],
-        ["Getting more out","Water and gas pumped back into older fields in Oman and the UAE to push out oil that would otherwise stay underground."],
-        ["Cleaning up afterwards","Safely dismantling fields at the end of their life, paid for from money set aside in advance."]
+        ["We run the fields","Operator on our shallow-water and onshore fields, including two floating production ships."],
+        ["Connecting new finds","New finds piped back to platforms we already own, rather than building another."],
+        ["Drilling between wells","Extra wells in producing fields, on a rolling three-year rig schedule."],
+        ["Getting more out","Water and gas injected into older fields to recover oil that would otherwise stay down."],
+        ["Cleaning up afterwards","End-of-life fields dismantled safely, funded from money set aside in advance."]
       ],
       deliverables:[
         "Masirah Deep hub, offshore Oman — 2 floating production ships, 148,000 barrels a day",
@@ -690,14 +692,13 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
       tag:"Liquefaction and shipping",
       img:"card_gas",
       hero:"hero_lng",
-      card:"Chilling natural gas into liquid in Oman, then shipping it to customers in Asia and around the Gulf.",
-      lede:"Gas cannot be shipped as a gas. We cool it until it turns liquid, carry it by sea, and sell it to the customer at the other end.",
+      card:"Liquefaction in Oman, then shipping to customers in Asia and the Gulf.",
+      lede:"We chill gas to liquid, carry it by sea, and sell it at the other end.",
       intro:[
-        "Gas is the part of the business we are growing fastest. Our plant at Ras Meridian has three production lines that cool gas into liquid, and a fourth has been approved. We sell to the end customer ourselves rather than handing the gas over at the factory gate — so we also take on the shipping and the responsibility for arriving on time.",
-        "About 70% of our gas is sold on contracts of five years or more, which keeps income predictable. The rest is sold one shipload at a time at whatever the market pays that week — most valuable in winter, when demand and prices spike."
+        "Our fastest-growing business. Ras Meridian runs three liquefaction lines with a fourth approved. We sell to the end customer rather than at the plant gate, so we carry the shipping too. Around 70% moves on contracts of five years or more."
       ],
       specs:{ caption:"Gas and LNG at a glance", rows:[
-        ["Gas we can liquefy each year","14.2 million tonnes"],
+        ["Gas liquefied each year","14.2 million tonnes"],
         ["Fourth production line (approved)","5.2 million tonnes a year, first cargo 2029"],
         ["Shiploads delivered in 2025","208"],
         ["Ships under charter","11 vessels, 145–174k m³"],
@@ -709,11 +710,11 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
         ["Deliveries on time, 2025","99.4%"]
       ]},
       capabilities:[
-        ["We own every step","The gas field, the plant that liquefies it, the ship that carries it, and the contract with the buyer."],
-        ["Our own ships","We charter and schedule the fleet ourselves, so sending a cargo to a better market is our decision to make."],
-        ["Long-term customers","Multi-year supply agreements with buyers in Japan, Korea and India, and with neighbours in Kuwait and the UAE."],
-        ["Turning it back into gas","Space reserved at two Gulf import terminals, where the liquid is warmed back into gas for local use in summer."],
-        ["Carbon-neutral option","Buyers can ask for a shipment whose emissions have been offset, with the certificates cancelled in their name."]
+        ["We own every step","The field, the plant, the ship and the contract with the buyer."],
+        ["Our own ships","We charter and schedule the fleet, so diverting a cargo is our decision."],
+        ["Long-term customers","Multi-year agreements with buyers in Japan, Korea, India and the Gulf."],
+        ["Turning it back into gas","Space held at two Gulf import terminals for summer demand."],
+        ["Carbon-neutral option","Cargoes can be offset, with the certificates cancelled in the buyer's name."]
       ],
       deliverables:[
         "Ras Meridian LNG, Oman — 3 trains operating, Train 4 under construction",
@@ -737,30 +738,29 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
       tag:"Downstream",
       img:"card_refining",
       hero:"hero_refining",
-      card:"Three refineries turning crude oil into fuels, with a chemicals plant next door that makes plastics.",
-      lede:"We turn crude oil into petrol, diesel, jet fuel and the raw material for plastics — including from cheaper, harder-to-process crude.",
+      card:"Three refineries making fuels, with a chemicals plant alongside.",
+      lede:"Crude into petrol, diesel, jet fuel and plastics — including the cheaper, harder grades.",
       intro:[
-        "Our three refineries process 640,000 barrels of crude a day. They carry extra processing units that simpler refineries do not have, and that is deliberate: it lets us buy the thick, high-sulphur crude that sells at a discount and still get a high proportion of diesel and jet fuel out of it.",
-        "At Duqm the refinery is joined to a chemicals plant. Rather than selling one of the lighter products at fuel prices, we pipe it next door and turn it into plastic pellets, which are worth considerably more. That link adds around $3.10 of value to every barrel."
+        "Extra conversion units let us buy thick, high-sulphur crude at a discount and still yield mostly diesel and jet fuel. At Duqm the refinery feeds a chemicals plant next door, adding about $3.10 to every barrel."
       ],
       specs:{ caption:"Downstream at a glance", rows:[
         ["Crude processed each day","640,000 barrels a day"],
         ["Refineries","3 — Duqm and Sohar in Oman, Umm Sadr in Qatar"],
         ["Processing complexity rating","9.8"],
-        ["Share of capacity used, 2025","94.1%"],
+        ["Capacity used, 2025","94.1%"],
         ["Yield of diesel and jet fuel","46%"],
         ["Ethylene made each year","1.9 million tonnes"],
         ["Plastic made each year","2.4 million tonnes"],
-        ["Share of crude that is heavy and high-sulphur","58%"],
-        ["Extra value per barrel from chemicals","$3.10"],
+        ["Heavy, high-sulphur crude","58%"],
+        ["Extra value per barrel","$3.10"],
         ["CO₂ per barrel refined","28.4 kg"]
       ]},
       capabilities:[
-        ["Handling cheap crude","Extra processing units that break thick, high-sulphur crude down into clean diesel and jet fuel."],
-        ["Refinery and chemicals together","At Duqm the refinery feeds a chemicals plant next door, turning fuel-grade material into higher-value plastic."],
-        ["Low-sulphur fuels","Diesel and ship fuel that meet the strictest sulphur limits, including the global shipping standard."],
-        ["Planned shutdowns","Every five years each plant is shut down and overhauled, timed for when profits are seasonally weakest."],
-        ["Blending in plant oils","Plant-based oils processed alongside crude, currently 4% of everything we put through."]
+        ["Handling cheap crude","Units that break thick, high-sulphur crude into clean diesel and jet fuel."],
+        ["Refinery and chemicals together","At Duqm the refinery feeds a chemicals plant, turning fuel into plastic."],
+        ["Low-sulphur fuels","Diesel and marine fuel meeting the strictest sulphur limits."],
+        ["Planned shutdowns","Each plant overhauled every five years, timed to the weakest margins."],
+        ["Blending in plant oils","Plant-based oils run alongside crude, currently 4% of throughput."]
       ],
       deliverables:[
         "Duqm Meridian refinery and chemicals plant, Oman — 320,000 barrels a day",
@@ -784,11 +784,10 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
       tag:"Midstream",
       img:"card_midstream",
       hero:"hero_terminal",
-      card:"6,800 km of pipeline, 24 storage terminals and four deep-water ports, all run from one control room.",
-      lede:"The pipes, tanks and ports that carry oil and gas from the well to the ship. The least glamorous business we run, and the steadiest.",
+      card:"6,800 km of pipeline, 24 terminals and four deep-water ports.",
+      lede:"The pipes, tanks and ports between the well and the ship. Our least glamorous business, and our steadiest.",
       intro:[
-        "This is the steadiest part of the company. About 80% of its income comes from fixed fees: customers pay to reserve space in our pipelines and tanks whether they end up using it or not. Because that income barely moves with the oil price, this business pays for its own expansion.",
-        "One control room watches the whole network, with leak detection on every line and robotic inspection tools sent through the pipes on a published schedule. Just under half the volume we carry belongs to other companies — competitors included, who pay to use our pipes."
+        "The steadiest part of the company. Around 80% of income is fixed fees — customers reserve space whether they ship or not — so it barely follows the oil price. Just under half the volume we carry belongs to other companies."
       ],
       specs:{ caption:"Midstream at a glance", rows:[
         ["Pipeline network","6,800 km"],
@@ -798,16 +797,16 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
         ["Deep-water ship berths","4"],
         ["Largest tanker we can load","320,000 tonnes"],
         ["Revenue from fixed fees","81%"],
-        ["Volume carried for other companies","46%"],
-        ["Time the network was running, 2025","99.7%"],
+        ["Carried for other companies","46%"],
+        ["Network uptime, 2025","99.7%"],
         ["Reportable spills, 2025","0"]
       ]},
       capabilities:[
-        ["Income that does not swing","Customers pay a fixed fee to reserve capacity whether they ship or not, so income barely follows the oil price."],
-        ["One control room","The whole network is watched from a single room, with leak detection and valves that can be shut remotely."],
-        ["Inspected from the inside","Robotic tools are sent through the pipes on a published schedule, and the findings are shared with customers."],
-        ["Keeping grades apart","Different grades of crude are stored and blended separately, so each customer gets exactly what they paid for."],
-        ["Berths for the largest tankers","Deep-water berths that take the biggest crude tankers afloat, with equipment that captures fumes during loading."]
+        ["Income that does not swing","Customers pay to reserve capacity whether they ship or not."],
+        ["One control room","One room watches the network, with leak detection and remote valves."],
+        ["Inspected from the inside","Robotic tools run the pipes on a published schedule, findings shared."],
+        ["Keeping grades apart","Grades stored and blended separately, so customers get what they paid for."],
+        ["Berths for the largest tankers","Berths for the largest tankers afloat, with vapour capture on loading."]
       ],
       deliverables:[
         "Sohar–Duqm crude pipeline, Oman — 1,240 km, 900,000 barrels a day",
@@ -831,30 +830,29 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
       tag:"Lower carbon",
       img:"card_transition",
       hero:"hero_shipping",
-      card:"Cutting our own emissions: capturing carbon, stopping gas leaks, and 1.4 GW of solar and wind.",
-      lede:"Cutting the emissions from our own operations, capturing the carbon we cannot avoid, and building solar and wind to power our sites.",
+      card:"Carbon capture, methane abatement and 1.4 GW of solar and wind.",
+      lede:"Cutting our own emissions, capturing what we cannot avoid, and powering our sites with solar and wind.",
       intro:[
-        "We spend 18% of the company's total budget on lowering emissions, and we report it as a business in its own right, held to the same financial standards as everything else. None of it is paid for from a side account or left out of the main figures.",
-        "We tackle it in a deliberate order. Stopping methane leaks comes first, because it is the cheapest way to remove a tonne of emissions and the technology to measure it is now reliable. Capturing carbon dioxide comes second, fitted to the plants that will still be running in 2040. Solar and wind come third, sized to cover the electricity our own sites buy from the grid."
+        "18% of group capital, reported as its own business and held to the same returns test as the rest. Methane leaks first, because it is the cheapest tonne. Then carbon capture. Then solar and wind, sized to our own demand."
       ],
       specs:{ caption:"Transition at a glance", rows:[
         ["Share of company investment","18%"],
         ["Solar and wind running now","1.4 gigawatts"],
         ["Solar and wind being built","0.9 gigawatts"],
-        ["CO₂ we can capture each year","2.5 million tonnes"],
-        ["CO₂ stored underground so far","4.1 million tonnes"],
-        ["Methane lost, as a share of gas sold","0.11% of gas marketed"],
+        ["CO₂ captured each year","2.5 million tonnes"],
+        ["CO₂ stored underground","4.1 million tonnes"],
+        ["Methane lost, share of gas sold","0.11% of gas marketed"],
         ["Routine flaring ends by","2028"],
         ["Emissions cut since 2019","−31%"],
         ["Reporting standard","OGMP 2.0, Gold Standard"],
         ["Target for 2030","−50% vs. 2019"]
       ]},
       capabilities:[
-        ["Finding leaks","Every site we run is monitored continuously for methane leaks, cross-checked by satellite and drone surveys."],
-        ["Capturing carbon dioxide","Carbon dioxide is captured at the Sohar refinery and the Ras Meridian gas plant, then stored deep underground."],
-        ["Powering our own sites","Solar and wind farms built to replace the grid electricity our own facilities would otherwise buy."],
-        ["No more routine flaring","Ending the routine burning-off of unwanted gas at our sites, with an audited deadline of 2028."],
-        ["Checked by outsiders","Our emissions figures are audited by an independent firm, not simply reported by us."]
+        ["Finding leaks","Continuous methane monitoring, cross-checked by satellite and drone."],
+        ["Capturing carbon dioxide","Captured at Sohar and Ras Meridian, then stored deep underground."],
+        ["Powering our own sites","Solar and wind sized to replace the grid power our sites buy."],
+        ["No more routine flaring","Routine flaring ends across all operated sites, audited, by 2028."],
+        ["Checked by outsiders","Emissions audited by an independent firm, not just reported by us."]
       ],
       deliverables:[
         "Ibri West solar complex, Oman — 640 MW operating",
@@ -876,45 +874,45 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
   var SLIDES = [
     { img:"hero_upstream", eyebrow:"Exploration & Production",
       h:"Energy that has to arrive.",
-      p:"We produce the equivalent of 412,000 barrels of oil every day across six Gulf countries — and we run most of those fields ourselves.",
+      p:"412,000 barrels of oil equivalent a day, across six Gulf countries. We operate most of it ourselves.",
       href:"#/services/exploration-production", cta:"Our upstream business", nav:"Exploration & Production" },
     { img:"hero_lng", eyebrow:"Gas & LNG",
       h:"Gas, from the ground to the customer.",
-      p:"Natural gas has to be chilled into a liquid before it can cross an ocean. We do that, then ship it ourselves — 14.2 million tonnes a year on a fleet of eleven vessels.",
+      p:"Gas must be chilled to liquid before it can cross an ocean. We do that, and ship it — 14.2 million tonnes a year.",
       href:"#/services/gas-lng", cta:"Our gas and LNG business", nav:"Gas & LNG" },
     { img:"hero_refining", eyebrow:"Refining & Petrochemicals",
       h:"Built for the difficult barrels.",
-      p:"Our three refineries turn 640,000 barrels a day into fuels and plastics — including the thick, high-sulphur crude that most refineries cannot process.",
+      p:"640,000 barrels a day into fuels and plastics — including the heavy crude most refineries cannot take.",
       href:"#/services/refining-petrochemicals", cta:"Our downstream business", nav:"Refining & Petrochemicals" },
     { img:"hero_terminal", eyebrow:"Pipelines & Terminals",
       h:"The network that never stops.",
-      p:"6,800 kilometres of pipeline and 31 million barrels of storage carry oil and gas to port, running 99.7% of the time.",
+      p:"6,800 km of pipeline and 31 million barrels of storage, running 99.7% of the time.",
       href:"#/services/pipelines-terminals", cta:"Our midstream business", nav:"Pipelines & Terminals" },
     { img:"hero_shipping", eyebrow:"Energy Transition",
       h:"Lower emissions, with deadlines.",
-      p:"We spend 18% of our budget on cutting emissions: capturing 2.5 million tonnes of carbon dioxide a year, and ending routine gas burning by 2028.",
+      p:"18% of our budget cuts emissions: 2.5 million tonnes of CO₂ captured a year, routine flaring gone by 2028.",
       href:"#/services/energy-transition", cta:"Our transition programme", nav:"Energy Transition" }
   ];
 
   var NEWS = [
     { date:"27 August 2026", cat:"Gas & LNG", title:"Fourth production line approved at Ras Meridian",
-      body:"The new line adds 5.2 million tonnes a year, taking the plant to 19.4 million in total. The first shipment is due in 2029, and 78% of it is already sold." },
+      body:"The line adds 5.2 million tonnes a year, taking the plant to 19.4 million. First cargo is due in 2029, and 78% is already sold." },
     { date:"14 July 2026", cat:"Upstream", title:"First oil from the Al Hadd East field, offshore Abu Dhabi",
-      body:"Four new wells were piped back to the existing Al Hadd platform and began producing eleven weeks early, adding 34,000 barrels a day at peak." },
+      body:"Four wells piped back to the existing platform came on eleven weeks early, adding 34,000 barrels a day at peak." },
     { date:"09 June 2026", cat:"Energy transition", title:"Sohar carbon capture reaches two million tonnes stored",
-      body:"The plant has now pumped 2.04 million tonnes of carbon dioxide underground since it opened, running at 96% of its design capacity this year." },
+      body:"2.04 million tonnes stored since opening, with the plant running at 96% of design capacity." },
     { date:"21 May 2026", cat:"Downstream", title:"Duqm Meridian completes its biggest maintenance shutdown since 2018",
-      body:"The 42-day shutdown overhauled the main processing units, finished four days early, and passed without a single injury causing lost time." }
+      body:"The 42-day shutdown overhauled the main units, finished four days early, and lost no time to injury." }
   ];
 
   var STANDARDS = ["OGMP 2.0 Gold Standard","IPIECA sustainability reporting","ISO 14001","ISO 45001","IOGP member","TCFD aligned","API standards","IMO 2020 compliant"];
 
   var CHAIN = [
-    { step:"01", h:"Explore", p:"Surveying the rock, drilling test wells and winning licences — mostly close to fields we already run.", dur:"2 – 6 years" },
-    { step:"02", h:"Produce", p:"Platforms and onshore wells bring the oil and gas up, then separate it into oil, gas and water.", dur:"20 – 40 year field life" },
-    { step:"03", h:"Move", p:"Pipelines, storage tanks and ports carry it onward to the refineries and to waiting ships.", dur:"Continuous" },
-    { step:"04", h:"Process", p:"Refineries and gas plants turn it into petrol, diesel, plastics and liquefied gas.", dur:"Continuous" },
-    { step:"05", h:"Market", p:"We sell it on long contracts and in open markets — and we are the ones responsible for delivering it.", dur:"1 – 20 year contracts" }
+    { step:"01", h:"Explore", p:"Seismic, test wells and licences, close to fields we already run.", dur:"2 – 6 years" },
+    { step:"02", h:"Produce", p:"Platforms and onshore wells lift it and separate oil, gas and water.", dur:"20 – 40 year field life" },
+    { step:"03", h:"Move", p:"Pipelines, tanks and ports carry it to the plants and the ships.", dur:"Continuous" },
+    { step:"04", h:"Process", p:"Refineries and gas plants make fuels, plastics and liquefied gas.", dur:"Continuous" },
+    { step:"05", h:"Market", p:"Sold on long contracts and in open markets, delivered by us.", dur:"1 – 20 year contracts" }
   ];
 
   var OFFICES = [
@@ -1288,7 +1286,7 @@ footer::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.
               return '<li><span class="c">'+esc(g[0])+'</span>'+(g[1]?'<span class="a">'+esc(g[1])+'</span>':'')+'</li>';
             }).join("")+'</ul></div>'+
           '<div class="panel panel--deep"><p class="eyebrow">Enquiries</p><h3>Talk to this business</h3>'+
-            '<p style="font-size:.9rem">Partnership, supply and investor questions on '+esc(s.title)+' route through the group enquiry desk.</p>'+
+            '<p style="font-size:var(--t4)">Partnership, supply and investor questions on '+esc(s.title)+' go to the group enquiry desk.</p>'+
             '<a class="btn btn-primary btn-sm" href="#/contact" style="align-self:flex-start">Contact us '+ARROW+'</a></div>'+
           '<div class="panel"><p class="eyebrow">Other businesses</p>'+
             '<ul class="related">'+related.map(function(r){
