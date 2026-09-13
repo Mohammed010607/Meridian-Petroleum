@@ -6,7 +6,7 @@
 <title>Meridian Petroleum</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;700;800&family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
 <style>
 :root{
   --paper:#F6F5F2; --surface:#FFFFFF; --surface-2:#EDEAE3;
@@ -16,13 +16,13 @@
   --on-deep:#F2F0EB; --on-deep-muted:#A5B1B5; --brass-bright:#D99B2E;
   --shadow-2:0 2px 4px rgba(13,24,29,.05), 0 16px 36px -20px rgba(13,24,29,.35);
   --wrap:1220px; --gut:clamp(1.15rem,4vw,3rem);
-  --fs-display:clamp(2.4rem,1.3rem + 3.8vw,4.3rem);
-  --fs-h2:clamp(1.75rem,1.28rem + 1.65vw,2.6rem);
-  --fs-h3:clamp(1.12rem,1.03rem + .42vw,1.36rem);
+  --fs-display:clamp(2.1rem,1.15rem + 3.2vw,3.75rem);
+  --fs-h2:clamp(1.58rem,1.14rem + 1.5vw,2.35rem);
+  --fs-h3:clamp(1.06rem,.99rem + .4vw,1.28rem);
   --r:3px;
-  --sans:"IBM Plex Sans Arabic",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  --disp:"Cairo","Helvetica Neue",Helvetica,Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:"Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --disp:"Roboto Slab",Georgia,"Times New Roman",serif;
+  --mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -44,8 +44,8 @@
 *{box-sizing:border-box}
 [hidden]{display:none !important}   /* author rules must not out-rank the hidden attribute */
 body{margin:0;background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
-h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);margin:0;letter-spacing:-.015em;line-height:1.2;text-wrap:balance}
-h1{font-size:var(--fs-display);font-weight:900;letter-spacing:-.02em}
+h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);margin:0;letter-spacing:-.02em;line-height:1.14;text-wrap:balance}
+h1{font-size:var(--fs-display);font-weight:800;letter-spacing:-.028em}
 h2{font-size:var(--fs-h2);font-weight:700}
 h3{font-size:var(--fs-h3);font-weight:700;letter-spacing:-.012em}
 p{margin:0}
@@ -82,7 +82,7 @@ img,svg{max-width:100%}
 .masthead .wrap{display:flex;align-items:center;gap:1.5rem;min-height:74px;position:relative}
 .brand{display:flex;align-items:center;gap:.72rem;color:var(--on-deep);flex:none}
 .brand:hover{text-decoration:none}
-.brand-name{font-family:var(--disp);font-weight:900;font-size:1.14rem;line-height:1.05;text-transform:uppercase}
+.brand-name{font-family:var(--disp);font-weight:800;font-size:1.04rem;line-height:1.05;text-transform:uppercase}
 .brand-sub{display:block;font-family:var(--mono);font-size:.585rem;letter-spacing:.2em;color:var(--on-deep-muted);text-transform:uppercase;font-weight:400;margin-top:.2rem}
 .nav{display:flex;align-items:center;gap:.3rem;margin-left:auto}
 .nav a{position:relative;color:var(--on-deep);font-size:.9rem;font-weight:500;padding:.55rem .85rem;border-radius:var(--r)}
@@ -139,7 +139,7 @@ img,svg{max-width:100%}
 .pagehead{background:var(--deep);color:var(--on-deep-muted);position:relative;overflow:hidden}
 .pagehead::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 130% at 90% 0%, rgba(217,155,46,.15), transparent 60%);pointer-events:none}
 .pagehead .wrap{position:relative;z-index:2;padding-block:clamp(2.3rem,5vw,3.9rem);display:flex;flex-direction:column;gap:.85rem;align-items:flex-start}
-.pagehead h1{color:var(--on-deep);font-size:clamp(2.15rem,1.45rem + 2.6vw,3.5rem)}
+.pagehead h1{color:var(--on-deep);font-size:clamp(1.9rem,1.3rem + 2.3vw,3.05rem)}
 .pagehead .lede{color:var(--on-deep-muted)}
 .pagehead--photo{background-size:cover;background-position:center}
 .pagehead--photo::before{background:linear-gradient(to right, rgba(7,14,18,.93) 0%, rgba(7,14,18,.78) 44%, rgba(7,14,18,.45) 100%)}
@@ -162,7 +162,7 @@ img,svg{max-width:100%}
 .creds > div{padding:1.4rem 1.5rem 1.4rem 0;border-right:1px solid var(--line)}
 .creds > div:last-child{border-right:0}
 .creds dt{font-family:var(--mono);font-size:.665rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
-.creds dd{margin:0;font-family:var(--disp);font-size:clamp(1.45rem,1.05rem + 1.2vw,2rem);font-weight:900;color:var(--ink);letter-spacing:-.015em;font-variant-numeric:tabular-nums;line-height:1.1}
+.creds dd{margin:0;font-family:var(--disp);font-size:clamp(1.45rem,1.05rem + 1.2vw,2rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
 .creds dd small{font-size:.5em;font-weight:600;color:var(--brass);letter-spacing:.02em}
 
 /* business cards with photography */
@@ -219,7 +219,7 @@ img,svg{max-width:100%}
 .kpis > div:last-child{border-right:0}
 .kpis dt{font-family:var(--mono);font-size:.645rem;letter-spacing:.13em;text-transform:uppercase;color:var(--on-deep-muted)}
 .kpis dd{margin:0;display:flex;align-items:baseline;gap:.42rem;flex-wrap:wrap}
-.kpis .fig{font-family:var(--disp);font-size:clamp(1.45rem,1.05rem + 1.3vw,2.1rem);font-weight:900;color:var(--on-deep);letter-spacing:-.015em;font-variant-numeric:tabular-nums;line-height:1}
+.kpis .fig{font-family:var(--disp);font-size:clamp(1.45rem,1.05rem + 1.3vw,2.1rem);font-weight:700;color:var(--on-deep);letter-spacing:-.025em;font-variant-numeric:tabular-nums;line-height:1}
 .kpis .unit{font-size:.79rem;color:var(--brass-bright);font-weight:600;line-height:1.3}
 
 /* capabilities as titled blocks, not a list */
@@ -237,7 +237,7 @@ img,svg{max-width:100%}
 .register th:last-child,.register td:last-child{text-align:right;padding-right:0}
 .register td{padding:1rem 1rem 1rem 0;border-bottom:1px solid var(--line-soft);vertical-align:baseline}
 .register tbody tr:last-child td{border-bottom:0}
-.register .nm{font-family:var(--disp);font-weight:700;font-size:1.02rem;letter-spacing:-.008em;color:var(--ink);width:54%;transition:color .18s ease}
+.register .nm{font-family:var(--disp);font-weight:700;font-size:1rem;letter-spacing:-.014em;color:var(--ink);width:54%;transition:color .18s ease}
 .register .sc{font-family:var(--mono);font-size:.81rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .register tbody tr:hover .nm{color:var(--brass)}
 
