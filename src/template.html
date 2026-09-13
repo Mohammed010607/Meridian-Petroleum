@@ -1,0 +1,1172 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Meridian Petroleum SAOG - an integrated oil and gas company operating across six Gulf countries, headquartered in Muscat.">
+<meta name="theme-color" content="#0D181D">
+<title>Meridian Petroleum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F6F5F2; --surface:#FFFFFF; --surface-2:#EDEAE3;
+  --ink:#111E23; --body:#3C484D; --muted:#6C787C; --line:#DBD7CF; --line-soft:#E6E2DA;
+  --brass:#A96C12; --brass-soft:#F2E7D2; --teal:#1C5C69; --alarm:#A8402A;
+  --deep:#0D181D; --deep-2:#16262D; --deep-line:#2B3C44;
+  --on-deep:#F2F0EB; --on-deep-muted:#A5B1B5; --brass-bright:#D99B2E;
+  --shadow-2:0 2px 4px rgba(13,24,29,.05), 0 16px 36px -20px rgba(13,24,29,.35);
+  --wrap:1220px; --gut:clamp(1.15rem,4vw,3rem);
+  --fs-display:clamp(2.1rem,1.15rem + 3.2vw,3.7rem);
+  --fs-h2:clamp(1.6rem,1.15rem + 1.5vw,2.35rem);
+  --fs-h3:clamp(1.08rem,1rem + .4vw,1.3rem);
+  --r:3px;
+  --sans:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --disp:"Archivo","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B1216; --surface:#131F24; --surface-2:#101A1F;
+    --ink:#EFEDE7; --body:#B7C1C4; --muted:#87949A; --line:#233238; --line-soft:#1B282E;
+    --brass:#DCA13A; --brass-soft:#2A2013; --teal:#63AAB6; --alarm:#E8886F;
+    --deep:#070E12; --deep-2:#132126; --deep-line:#24343B;
+    --shadow-2:0 2px 4px rgba(0,0,0,.3), 0 16px 36px -20px rgba(0,0,0,.75);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B1216; --surface:#131F24; --surface-2:#101A1F;
+  --ink:#EFEDE7; --body:#B7C1C4; --muted:#87949A; --line:#233238; --line-soft:#1B282E;
+  --brass:#DCA13A; --brass-soft:#2A2013; --teal:#63AAB6; --alarm:#E8886F;
+  --deep:#070E12; --deep-2:#132126; --deep-line:#24343B;
+  --shadow-2:0 2px 4px rgba(0,0,0,.3), 0 16px 36px -20px rgba(0,0,0,.75);
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none !important}   /* author rules must not out-rank the hidden attribute */
+body{margin:0;background:var(--paper);color:var(--body);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--disp);color:var(--ink);margin:0;letter-spacing:-.02em;line-height:1.12;text-wrap:balance}
+h1{font-size:var(--fs-display);font-weight:800;letter-spacing:-.035em}
+h2{font-size:var(--fs-h2);font-weight:700}
+h3{font-size:var(--fs-h3);font-weight:700;letter-spacing:-.012em}
+p{margin:0}
+a{color:var(--brass);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+ul{margin:0;padding:0;list-style:none}
+img,svg{max-width:100%}
+:focus-visible{outline:2px solid var(--brass-bright);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+.eyebrow{font-family:var(--mono);font-size:.7rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.lede{font-size:clamp(1.02rem,.98rem + .3vw,1.16rem);line-height:1.62;max-width:62ch}
+.prose{max-width:68ch;display:flex;flex-direction:column;gap:1rem}
+
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--sans);font-size:.875rem;font-weight:600;padding:.72rem 1.35rem;border-radius:var(--r);border:1px solid transparent;cursor:pointer;transition:background .18s ease,color .18s ease,border-color .18s ease}
+.btn:hover{text-decoration:none}
+.btn-primary{background:var(--brass-bright);color:#1A1204;border-color:var(--brass-bright)}
+.btn-primary:hover{background:#EDB04A;border-color:#EDB04A}
+.btn-ghost{background:rgba(8,14,18,.32);color:#FFF;border-color:rgba(255,255,255,.5);backdrop-filter:blur(2px)}
+.btn-ghost:hover{border-color:#FFF;background:rgba(8,14,18,.5)}
+.btn-outline{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn-outline:hover{border-color:var(--brass);color:var(--brass)}
+.btn-sm{padding:.44rem .9rem;font-size:.8rem}
+.arrow{transition:transform .18s ease}
+.btn:hover .arrow,.cardlink:hover .arrow,.related a:hover .arrow{transform:translateX(3px)}
+
+/* utility + masthead */
+.utility{background:var(--deep-2);color:var(--on-deep-muted);font-size:.755rem;border-bottom:1px solid var(--deep-line)}
+.utility .wrap{display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;align-items:center;justify-content:space-between;min-height:38px;padding-block:.4rem}
+.offices-inline{display:flex;flex-wrap:wrap;gap:.35rem 1.4rem;font-family:var(--mono)}
+.offices-inline b{color:var(--on-deep);font-weight:500}
+.accred{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.695rem;letter-spacing:.11em;text-transform:uppercase}
+.accred::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brass-bright);flex:none}
+.masthead{position:sticky;top:0;z-index:60;background:var(--deep);border-bottom:1px solid var(--deep-line)}
+.masthead .wrap{display:flex;align-items:center;gap:1.5rem;min-height:74px;position:relative}
+.brand{display:flex;align-items:center;gap:.72rem;color:var(--on-deep);flex:none}
+.brand:hover{text-decoration:none}
+.brand-name{font-family:var(--disp);font-weight:800;font-size:1.05rem;line-height:1.05;text-transform:uppercase}
+.brand-sub{display:block;font-family:var(--mono);font-size:.585rem;letter-spacing:.2em;color:var(--on-deep-muted);text-transform:uppercase;font-weight:400;margin-top:.2rem}
+.nav{display:flex;align-items:center;gap:.3rem;margin-left:auto}
+.nav a{position:relative;color:var(--on-deep);font-size:.9rem;font-weight:500;padding:.55rem .85rem;border-radius:var(--r)}
+.nav a:hover{text-decoration:none;color:#fff}
+.nav a::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:-.4rem;height:3px;background:var(--brass-bright);transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+.nav a:hover::after{transform:scaleX(.5)}
+.nav a[aria-current="page"]::after{transform:scaleX(1)}
+.nav .btn{margin-left:.7rem}
+.nav .btn::after{display:none}
+.navtoggle{display:none;align-items:center;min-height:44px;background:transparent;border:1px solid rgba(242,240,235,.35);color:var(--on-deep);border-radius:var(--r);padding:.5rem .95rem;margin-left:auto;cursor:pointer;font-family:var(--mono);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+.subnav{background:var(--surface-2);border-bottom:1px solid var(--line)}
+.subnav .wrap{display:flex;gap:.2rem;align-items:center;overflow-x:auto;min-height:50px}
+.subnav a{white-space:nowrap;font-size:.83rem;font-weight:500;color:var(--body);padding:.5rem .8rem;border-radius:var(--r)}
+.subnav a:hover{color:var(--ink);text-decoration:none}
+.subnav a[aria-current="page"]{color:var(--brass);background:var(--brass-soft);font-weight:600}
+
+/* ── SLB-style photo stage: zoom out, crossfade ── */
+.stage{position:relative;height:clamp(505px,76vh,725px);overflow:hidden;background:var(--deep);border-bottom:1px solid var(--deep-line)}
+.slides{position:absolute;inset:0;z-index:0;isolation:isolate}
+/* The incoming slide fades in *over* the outgoing one, which holds underneath —
+   no dip to background mid-fade, and no dependency on transitions firing. */
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.13);z-index:0}
+.slide.was-active{opacity:1;transform:scale(1);z-index:1}
+.slide.is-active{opacity:1;z-index:2;animation:kenburns 9s linear forwards}
+@keyframes kenburns{
+  0%{opacity:0;transform:scale(1.13)}
+  14%{opacity:1}
+  100%{opacity:1;transform:scale(1)}
+}
+.stage-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+  linear-gradient(to right, rgba(7,14,18,.90) 0%, rgba(7,14,18,.70) 38%, rgba(7,14,18,.22) 68%, rgba(7,14,18,.35) 100%),
+  linear-gradient(to top, rgba(7,14,18,.80) 0%, rgba(7,14,18,.10) 46%, rgba(7,14,18,.42) 100%)}
+.stage-inner{position:relative;z-index:2;height:100%;display:flex;align-items:center}
+.stage-copy{position:absolute;left:var(--gut);right:var(--gut);max-width:610px;opacity:0;visibility:hidden;transform:translateY(14px);display:flex;flex-direction:column;gap:1.05rem;align-items:flex-start}
+.stage-copy.is-active{opacity:1;visibility:visible;transform:none;animation:copyin .85s ease forwards}
+@keyframes copyin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.stage-copy h1{color:#FFF;text-shadow:0 2px 24px rgba(0,0,0,.45)}
+.stage-copy .lede{color:rgba(255,255,255,.90);max-width:44ch;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+.stage-copy .eyebrow{color:var(--brass-bright)}
+.stage-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.25rem}
+.stage-nav{position:absolute;left:0;right:0;bottom:0;z-index:3}
+.stage-nav .wrap{display:flex;gap:0;align-items:stretch;border-top:1px solid rgba(255,255,255,.22)}
+.dot{flex:1;min-width:0;background:transparent;border:0;border-right:1px solid rgba(255,255,255,.16);cursor:pointer;text-align:left;padding:.85rem .9rem 1rem;color:rgba(255,255,255,.62);font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;position:relative;transition:color .25s ease,background .25s ease}
+.dot:last-child{border-right:0}
+.dot:hover{color:#FFF;background:rgba(255,255,255,.08)}
+.dot .n{display:block;font-weight:600;margin-bottom:.2rem}
+.dot .t{display:block;font-family:var(--sans);font-size:.79rem;letter-spacing:0;text-transform:none;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dot[aria-selected="true"]{color:#FFF}
+.dot::after{content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--brass-bright)}
+.dot[aria-selected="true"]::after{animation:dotfill 9s linear forwards}
+@keyframes dotfill{from{width:0}to{width:100%}}
+
+/* interior page header, with photo */
+.pagehead{background:var(--deep);color:var(--on-deep-muted);position:relative;overflow:hidden}
+.pagehead::before{content:"";position:absolute;inset:0;background:radial-gradient(90% 130% at 90% 0%, rgba(217,155,46,.15), transparent 60%);pointer-events:none}
+.pagehead .wrap{position:relative;z-index:2;padding-block:clamp(2.3rem,5vw,3.9rem);display:flex;flex-direction:column;gap:.85rem;align-items:flex-start}
+.pagehead h1{color:var(--on-deep);font-size:clamp(1.9rem,1.3rem + 2.3vw,3.05rem)}
+.pagehead .lede{color:var(--on-deep-muted)}
+.pagehead--photo{background-size:cover;background-position:center}
+.pagehead--photo::before{background:linear-gradient(to right, rgba(7,14,18,.93) 0%, rgba(7,14,18,.78) 44%, rgba(7,14,18,.45) 100%)}
+.pagehead--photo h1,.pagehead--photo .lede{color:#FFF}
+.pagehead--photo .lede{color:rgba(255,255,255,.88)}
+.pagehead--photo .crumbs,.pagehead--photo .crumbs a{color:rgba(255,255,255,.78)}
+.crumbs{display:flex;flex-wrap:wrap;gap:.45rem;font-family:var(--mono);font-size:.695rem;letter-spacing:.1em;text-transform:uppercase;color:var(--on-deep-muted)}
+.crumbs a{color:var(--on-deep-muted)}
+.crumbs a:hover{color:var(--brass-bright)}
+.crumbs span{opacity:.45}
+
+/* sections */
+.section{padding-block:clamp(2.8rem,6vw,5rem)}
+.section--alt{background:var(--surface-2);border-block:1px solid var(--line)}
+.sechead{display:flex;flex-direction:column;gap:.7rem;margin-bottom:2.2rem;max-width:64ch}
+.sechead-row{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:flex-end;justify-content:space-between;margin-bottom:2.2rem}
+.sechead-row .sechead{margin-bottom:0}
+
+.creds{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0}
+.creds > div{padding:1.4rem 1.5rem 1.4rem 0;border-right:1px solid var(--line)}
+.creds > div:last-child{border-right:0}
+.creds dt{font-family:var(--mono);font-size:.665rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.creds dd{margin:0;font-family:var(--disp);font-size:clamp(1.45rem,1.05rem + 1.2vw,2rem);font-weight:700;color:var(--ink);letter-spacing:-.025em;font-variant-numeric:tabular-nums;line-height:1.1}
+.creds dd small{font-size:.5em;font-weight:600;color:var(--brass);letter-spacing:.02em}
+
+/* business cards with photography */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:1.25rem}
+.svc-card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease}
+.svc-card h3 a::after{content:"";position:absolute;inset:0;z-index:1}   /* whole card is the link */
+.svc-card:focus-within{border-color:var(--brass)}
+.svc-card:hover{border-color:var(--brass);box-shadow:var(--shadow-2);transform:translateY(-2px)}
+.svc-art{position:relative;aspect-ratio:88/57;overflow:hidden;background:var(--deep);border-bottom:1px solid var(--line)}
+.svc-art img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.svc-card:hover .svc-art img{transform:scale(1.045)}
+.svc-art .tagchip{position:absolute;left:0;bottom:0;background:rgba(7,14,18,.82);color:#FFF;font-family:var(--mono);font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;padding:.35rem .7rem}
+.svc-body{padding:1.3rem 1.4rem 1.45rem;display:flex;flex-direction:column;gap:.55rem;flex:1}
+.svc-body p{font-size:.92rem}
+.cardlink{margin-top:auto;padding-top:.7rem;display:inline-flex;align-items:center;gap:.4rem;font-size:.83rem;font-weight:600;color:var(--brass)}
+.svc-card h3 a{color:var(--ink)}
+.svc-card:hover h3 a{color:var(--brass)}
+.svc-card h3 a:hover{text-decoration:none}
+
+/* value chain */
+.seq{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));border-top:1px solid var(--line)}
+.seq li{padding:1.5rem 1.4rem 1.55rem 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:.5rem}
+.seq li:last-child{border-right:0}
+.seq .step{font-family:var(--mono);font-size:.715rem;font-weight:600;letter-spacing:.14em;color:var(--brass)}
+.seq h3{font-size:1rem}
+.seq p{font-size:.885rem}
+.seq .dur{font-family:var(--mono);font-size:.69rem;color:var(--muted);margin-top:auto;padding-top:.6rem}
+
+/* full-bleed feature band */
+.feature{position:relative;background-size:cover;background-position:center;overflow:hidden}
+.feature::before{content:"";position:absolute;inset:0;background:linear-gradient(to right, rgba(7,14,18,.92) 0%, rgba(7,14,18,.72) 46%, rgba(7,14,18,.34) 100%)}
+.feature .wrap{position:relative;z-index:2;padding-block:clamp(3rem,7vw,5.2rem);display:flex;flex-direction:column;gap:1.05rem;align-items:flex-start;max-width:var(--wrap)}
+.feature h2{color:#FFF;max-width:19ch}
+.feature .lede{color:rgba(255,255,255,.88);max-width:50ch}
+.feature .eyebrow{color:var(--brass-bright)}
+
+.standards{background:var(--deep-2);color:var(--on-deep-muted)}
+.standards .wrap{display:flex;flex-wrap:wrap;gap:.9rem 2.25rem;align-items:center;padding-block:1.45rem}
+.standards .lab{font-family:var(--mono);font-size:.675rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-deep);flex:none}
+.standards ul{display:flex;flex-wrap:wrap;gap:.5rem}
+.standards li{font-family:var(--mono);font-size:.73rem;border:1px solid var(--deep-line);border-radius:var(--r);padding:.32rem .62rem}
+
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,272px),1fr));gap:1.5rem}
+.news article{display:flex;flex-direction:column;gap:.55rem;padding-top:1.05rem;border-top:2px solid var(--ink)}
+.news .meta{display:flex;flex-wrap:wrap;gap:.4rem .85rem;align-items:center;font-family:var(--mono);font-size:.665rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.news .cat{color:var(--brass);font-weight:600}
+.news h3{font-size:1.04rem;line-height:1.3}
+.news p{font-size:.89rem}
+
+/* headline figures, straight under the page header */
+.kpiband{background:var(--deep-2);border-bottom:1px solid var(--deep-line)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:0}
+.kpis > div{padding:1.5rem clamp(.9rem,1.6vw,1.5rem) 1.6rem 0;border-right:1px solid var(--deep-line);display:flex;flex-direction:column;gap:.5rem}
+.kpis > div:last-child{border-right:0}
+.kpis dt{font-family:var(--mono);font-size:.645rem;letter-spacing:.13em;text-transform:uppercase;color:var(--on-deep-muted)}
+.kpis dd{margin:0;display:flex;align-items:baseline;gap:.42rem;flex-wrap:wrap}
+.kpis .fig{font-family:var(--disp);font-size:clamp(1.45rem,1.05rem + 1.3vw,2.1rem);font-weight:700;color:var(--on-deep);letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1}
+.kpis .unit{font-size:.79rem;color:var(--brass-bright);font-weight:600;line-height:1.3}
+
+/* capabilities as titled blocks, not a list */
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,246px),1fr));gap:1rem}
+.caps article{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:1.3rem 1.35rem 1.4rem;display:flex;flex-direction:column;gap:.55rem;transition:border-color .2s ease}
+.caps article:hover{border-color:var(--brass)}
+.caps h3{font-size:1rem}
+.caps h3::before{content:"";display:block;width:24px;height:2px;background:var(--brass);margin-bottom:.8rem}
+.caps p{font-size:.885rem}
+
+/* asset register - a portfolio table, not a spec sheet */
+.regwrap{overflow-x:auto}
+.register{width:100%;min-width:460px;border-collapse:collapse}
+.register th{text-align:left;font-family:var(--mono);font-size:.635rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;padding:0 1rem .75rem 0;border-bottom:2px solid var(--ink)}
+.register th:last-child,.register td:last-child{text-align:right;padding-right:0}
+.register td{padding:1rem 1rem 1rem 0;border-bottom:1px solid var(--line-soft);vertical-align:baseline}
+.register tbody tr:last-child td{border-bottom:0}
+.register .nm{font-family:var(--disp);font-weight:600;font-size:1.02rem;letter-spacing:-.012em;color:var(--ink);width:54%;transition:color .18s ease}
+.register .sc{font-family:var(--mono);font-size:.81rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.register tbody tr:hover .nm{color:var(--brass)}
+
+/* remaining specification, as a figure grid rather than rows of a table */
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,196px),1fr));border-top:1px solid var(--line);margin:0}
+.specs > div{padding:1.05rem 1.3rem 1.15rem 0;border-bottom:1px solid var(--line-soft);display:flex;flex-direction:column;gap:.32rem}
+.specs dt{font-family:var(--mono);font-size:.635rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.specs dd{margin:0;font-family:var(--mono);font-size:.92rem;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.4}
+.specnote{margin-top:1rem;font-size:.83rem;color:var(--muted);max-width:64ch;line-height:1.55}
+
+/* where we operate */
+.geo li{padding:.72rem 0;border-bottom:1px solid var(--line-soft);display:flex;flex-direction:column;gap:.18rem}
+.geo li:last-child{border-bottom:0}
+.geo .c{font-weight:600;color:var(--ink);font-size:.9rem}
+.geo .a{font-size:.81rem;color:var(--muted);line-height:1.45}
+
+.detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,336px);gap:clamp(2rem,4vw,3.5rem);align-items:start}
+.detail-main{display:flex;flex-direction:column;gap:2.4rem;min-width:0}
+.block{display:flex;flex-direction:column;gap:1rem}
+.block h2{font-size:clamp(1.26rem,1.1rem + .7vw,1.6rem)}
+.aside{display:flex;flex-direction:column;gap:1.15rem;position:sticky;top:98px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:1.25rem 1.35rem;display:flex;flex-direction:column;gap:.75rem}
+.panel h3{font-size:.95rem}
+.panel--deep{background:var(--deep-2);border-color:var(--deep-line);color:var(--on-deep-muted)}
+.panel--deep h3{color:var(--on-deep)}
+.panel--deep .eyebrow{color:var(--brass-bright)}
+.related li{border-bottom:1px solid var(--line-soft)}
+.related li:last-child{border-bottom:0}
+.related a{display:flex;justify-content:space-between;gap:.75rem;align-items:center;padding:.6rem 0;font-size:.89rem;color:var(--ink);font-weight:500}
+.related a:hover{color:var(--brass);text-decoration:none}
+.related .arrow{color:var(--brass)}
+
+.cta{background:var(--deep);color:var(--on-deep-muted);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:0;background:radial-gradient(70% 130% at 12% 50%, rgba(217,155,46,.16), transparent 60%);pointer-events:none}
+.cta .wrap{position:relative;padding-block:clamp(2.5rem,5vw,3.9rem);display:flex;flex-wrap:wrap;gap:1.75rem;align-items:center;justify-content:space-between}
+.cta h2{color:var(--on-deep);max-width:20ch}
+.cta .lede{color:var(--on-deep-muted);max-width:44ch}
+.cta-copy{display:flex;flex-direction:column;gap:.75rem}
+.cta-actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.cta .btn-ghost{color:var(--on-deep);border-color:rgba(242,240,235,.42);background:transparent}
+
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,4vw,3.5rem);align-items:start}
+.offices{display:flex;flex-direction:column;gap:1.15rem;min-width:0}
+.office{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--brass);border-radius:var(--r);padding:1.25rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;min-width:0}
+.office address{font-style:normal;font-size:.92rem;line-height:1.6}
+.office dl{display:grid;grid-template-columns:auto minmax(0,1fr);gap:.28rem .9rem;margin:.4rem 0 0;font-size:.865rem}
+.office dt{font-family:var(--mono);font-size:.655rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:.22rem}
+.office dd{margin:0;font-family:var(--mono);color:var(--ink);font-variant-numeric:tabular-nums;min-width:0;overflow-wrap:anywhere}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:clamp(1.3rem,3vw,1.85rem);display:flex;flex-direction:column;gap:1rem}
+.field{display:flex;flex-direction:column;gap:.38rem}
+.field label{font-family:var(--mono);font-size:.665rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{font-family:var(--sans);font-size:.93rem;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:.65rem .8rem;width:100%}
+.field textarea{resize:vertical;min-height:112px;line-height:1.55}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted);opacity:1}
+.field select[data-empty="true"]{color:var(--muted)}
+.field select option{color:var(--ink);background:var(--surface)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--brass);outline-offset:0;border-color:var(--brass)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.formnote{font-size:.775rem;color:var(--muted);line-height:1.5}
+.formmsg{border:1px solid var(--brass);background:var(--brass-soft);color:var(--ink);border-radius:var(--r);padding:.8rem 1rem;font-size:.88rem}
+.err{color:var(--alarm);font-size:.755rem;font-family:var(--mono)}
+
+footer{background:var(--deep);color:var(--on-deep-muted);border-top:1px solid var(--deep-line)}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1.3fr 1fr;gap:clamp(1.75rem,3.5vw,3rem);padding-block:clamp(2.4rem,5vw,3.5rem)}
+.foot-grid h4{font-family:var(--mono);font-size:.665rem;letter-spacing:.16em;text-transform:uppercase;color:var(--on-deep);font-weight:500;margin-bottom:.9rem}
+.foot-grid li{margin-bottom:.48rem;font-size:.87rem}
+.foot-grid a{color:var(--on-deep-muted)}
+.foot-grid a:hover{color:var(--brass-bright)}
+.foot-about{font-size:.87rem;line-height:1.62;max-width:36ch}
+.foot-brand{display:flex;align-items:center;gap:.7rem;color:var(--on-deep);margin-bottom:.95rem}
+.foot-addr{font-style:normal;font-size:.855rem;line-height:1.6;margin-bottom:1rem}
+.foot-addr b{color:var(--on-deep);font-weight:500;display:block;font-size:.665rem;font-family:var(--mono);letter-spacing:.13em;text-transform:uppercase;margin-bottom:.28rem}
+.foot-bar{border-top:1px solid var(--deep-line);padding-block:1.1rem;display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;justify-content:space-between;align-items:center;font-size:.765rem;font-family:var(--mono)}
+.demo-note{opacity:.72}
+
+@media (max-width:1000px){
+  .kpis{grid-template-columns:1fr 1fr}
+  .kpis > div:nth-child(2){border-right:0}
+  .kpis > div:nth-child(1),.kpis > div:nth-child(2){border-bottom:1px solid var(--deep-line)}
+  .detail{grid-template-columns:1fr}
+  .aside{position:static}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .creds{grid-template-columns:1fr 1fr}
+  .creds > div:nth-child(2){border-right:0}
+  .creds > div:nth-child(1),.creds > div:nth-child(2){border-bottom:1px solid var(--line)}
+  .dot .t{display:none}
+  .dot{flex:0 0 auto;min-width:70px}
+  .stage-nav .wrap{justify-content:flex-start}
+}
+@media (max-width:880px){
+  .contact-grid{grid-template-columns:1fr}
+  .navtoggle{display:inline-flex}
+  .nav{position:absolute;left:0;right:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--deep-2);border-bottom:1px solid var(--deep-line);padding:.5rem var(--gut) 1rem;margin-left:0;z-index:70}
+  .nav a{padding:.8rem .25rem;border-bottom:1px solid var(--deep-line)}
+  .nav a::after{left:.25rem;right:auto;width:26px;bottom:0}
+  .nav .btn{margin:.9rem 0 0;justify-content:center}
+  .seq li{border-right:0;border-bottom:1px solid var(--line);padding-right:0}
+  .seq li:last-child{border-bottom:0}
+  .stage{height:clamp(470px,72vh,600px)}
+  .stage-scrim{background:linear-gradient(to top, rgba(7,14,18,.90) 0%, rgba(7,14,18,.86) 34%, rgba(7,14,18,.42) 62%, rgba(7,14,18,.52) 100%)}
+}
+@media (max-width:560px){
+  .office dl{grid-template-columns:1fr;gap:.1rem}
+  .office dt{padding-top:.5rem}
+  .kpis{grid-template-columns:1fr}
+  .kpis > div{border-right:0;border-bottom:1px solid var(--deep-line);padding-bottom:1.1rem}
+  .kpis > div:last-child{border-bottom:0}
+  .foot-grid{grid-template-columns:1fr}
+  .field-row{grid-template-columns:1fr}
+  .creds{grid-template-columns:1fr}
+  .creds > div{border-right:0;border-bottom:1px solid var(--line);padding-right:0}
+  .creds > div:last-child{border-bottom:0}
+}
+/* Touch devices: every control gets a 44px target.
+   Covers phones, and iPads in landscape where the viewport is still wide. */
+@media (pointer:coarse), (max-width:880px){
+  .brand{min-height:44px}
+  .nav a{min-height:44px;display:flex;align-items:center}
+  .subnav a{min-height:44px;display:inline-flex;align-items:center}
+  .btn,.btn-sm{min-height:44px}
+  .cardlink{min-height:44px;align-items:center}
+  .related a{min-height:44px}
+  .field input,.field select,.field textarea{min-height:44px}
+  .foot-grid li{margin-bottom:0}
+  .foot-grid li a{display:inline-flex;align-items:center;min-height:44px}
+  .applist li,.geo li{padding-block:.75rem}
+  .crumbs a{display:inline-flex;align-items:center;min-height:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  .slide{transform:none}
+}
+</style>
+
+<div class="utility">
+  <div class="wrap">
+    <div class="offices-inline">
+      <span><b>Muscat</b> +968 2455 0170</span>
+      <span><b>Abu Dhabi</b> +971 2 555 0140</span>
+      <span><b>Al Khobar</b> +966 13 555 0128</span>
+    </div>
+    <span class="accred">Integrated oil &amp; gas &#183; six countries across the Gulf</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="wrap">
+    <a class="brand" href="#/" aria-label="Meridian Petroleum home">
+      <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="1" y="1" width="32" height="32" rx="2" fill="#D99B2E"></rect>
+        <path d="M17 5.5 L17 28.5" stroke="#0D181D" stroke-width="1.6" fill="none"></path>
+        <path d="M6 17 L28 17" stroke="#0D181D" stroke-width="1.6" fill="none"></path>
+        <circle cx="17" cy="17" r="8.5" fill="none" stroke="#0D181D" stroke-width="1.6"></circle>
+        <path d="M17 17 L23.2 11.4" stroke="#0D181D" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+        <circle cx="17" cy="17" r="2" fill="#0D181D"></circle>
+      </svg>
+      <span class="brand-name">Meridian<span class="brand-sub">Petroleum</span></span>
+    </a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="#/" data-nav="/">Home</a>
+      <a href="#/services" data-nav="/services">Services</a>
+      <a href="#/contact" data-nav="/contact">Contact</a>
+      <a class="btn btn-ghost btn-sm" href="#/contact">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<div id="subnav"></div>
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="28" height="28" viewBox="0 0 34 34" aria-hidden="true">
+            <rect x="1" y="1" width="32" height="32" rx="2" fill="#D99B2E"></rect>
+            <path d="M17 5.5 L17 28.5" stroke="#0D181D" stroke-width="1.6" fill="none"></path>
+            <path d="M6 17 L28 17" stroke="#0D181D" stroke-width="1.6" fill="none"></path>
+            <circle cx="17" cy="17" r="8.5" fill="none" stroke="#0D181D" stroke-width="1.6"></circle>
+            <path d="M17 17 L23.2 11.4" stroke="#0D181D" stroke-width="2.4" fill="none" stroke-linecap="round"></path>
+            <circle cx="17" cy="17" r="2" fill="#0D181D"></circle>
+          </svg>
+          <span class="brand-name">Meridian<span class="brand-sub">Petroleum</span></span>
+        </div>
+        <p class="foot-about">A Middle East integrated oil and gas company: exploration and production, gas and LNG, refining, pipelines and terminals, and a funded energy transition programme. Headquartered in Muscat.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul id="foot-services"></ul>
+      </div>
+      <div>
+        <h4>Offices</h4>
+        <address class="foot-addr">
+          <b>Global headquarters</b>
+          Office 312, Qurum Business Centre<br>Way 2817, Qurum, Muscat<br>Sultanate of Oman<br>+968 2455 0170
+        </address>
+        <address class="foot-addr">
+          <b>United Arab Emirates</b>
+          Al Sila Tower, Al Maryah Island<br>Abu Dhabi<br>United Arab Emirates<br>+971 2 555 0140
+        </address>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#/">Home</a></li>
+          <li><a href="#/services">Services</a></li>
+          <li><a href="#/contact">Contact</a></li>
+        </ul>
+        <h4 style="margin-top:1.4rem">Frameworks</h4>
+        <ul>
+          <li>OGMP 2.0 Gold Standard</li>
+          <li>IPIECA reporting</li>
+          <li>ISO 14001 / 45001</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&#169; 2026 Meridian Petroleum SAOG</span>
+      <span class="demo-note">Demo site &#183; fictional company, all figures are sample data</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ------------------------------------------------------------------
+     PHOTOS.  Each entry below is one image, stored inline as a data URI
+     so the page stays a single self-contained file.
+
+     To use your own photo, replace the whole value with either
+        "your-photo.jpg"                     (a file next to this page), or
+        "data:image/jpeg;base64,...."        (an inline copy)
+
+     Sizes these are cropped to - match the shape and they will sit right:
+        hero_upstream / hero_refining / hero_lng
+        hero_terminal / hero_shipping ......... 1760 x 990   (16:9, wide)
+        card_ep / card_gas / card_refining
+        card_midstream / card_transition ...... 880 x 570    (~3:2)
+        band_plant ............................ 1600 x 620   (wide banner)
+
+     Nothing is printed over these images and nothing is credited
+     anywhere on the page - no watermark, no caption, no footer note.
+     ------------------------------------------------------------------ */
+  var IMG = __IMGS__;
+
+  var SERVICES = [
+    {
+      slug:"exploration-production",
+      note:"A barrel of oil equivalent counts oil and gas together as one figure. Replacing more than 100% of what you produce means reserves are growing rather than running down.",
+      title:"Exploration & Production",
+      tag:"Upstream",
+      img:"card_ep",
+      hero:"hero_upstream",
+      card:"Finding and producing oil and gas across Oman, the UAE, Saudi Arabia, Kuwait and Qatar.",
+      lede:"We find oil and gas, drill the wells and bring what comes out to the surface — inland in the desert and offshore in the Gulf.",
+      intro:[
+        "We run 21 oil and gas fields ourselves, and own a share of 14 more that other companies run. About half of what we produce comes from platforms offshore in the Gulf; the rest comes from fields inland in the desert. We prefer fields we operate ourselves, because then we control the costs rather than waiting on a partner to decide.",
+        "We do very little exploring in untested places. Most of our money goes into drilling extra wells in fields we already run, and connecting new discoveries by pipeline back to platforms that are already built and paid for. A well like that starts producing within months instead of years."
+      ],
+      specs:{ caption:"Upstream at a glance", rows:[
+        ["Production from fields we run","412,000 barrels a day"],
+        ["Total production including partner shares","587,000 barrels a day"],
+        ["Proven reserves still underground","2.14 billion barrels"],
+        ["New reserves found vs. produced","118%"],
+        ["Fields we operate","21"],
+        ["Split between oil and gas","54% / 46%"],
+        ["Cost to produce one barrel","$11.40"],
+        ["Share produced offshore","48%"],
+        ["Drilling rigs under contract","6"],
+        ["Investment budget, 2026","$3.8 billion"]
+      ]},
+      capabilities:[
+        ["We run the fields","We are the operator on our shallow-water and onshore fields, including two floating production ships."],
+        ["Connecting new finds","New discoveries are piped back to platforms we already own, instead of building another one."],
+        ["Drilling between wells","Extra wells drilled into fields already in production, planned on a rolling three-year schedule."],
+        ["Getting more out","Water and gas pumped back into older fields in Oman and the UAE to push out oil that would otherwise stay underground."],
+        ["Cleaning up afterwards","Safely dismantling fields at the end of their life, paid for from money set aside in advance."]
+      ],
+      deliverables:[
+        "Masirah Deep hub, offshore Oman — 2 floating production ships, 148,000 barrels a day",
+        "Al Hadd field, offshore Abu Dhabi — 11 producing wells",
+        "Jabal Sahil onshore field, Oman — 74,000 barrels a day",
+        "Wadi Sahba gas project, Saudi Arabia",
+        "Two exploration blocks awarded in the 2025 licensing round"
+      ],
+      applications:[
+        "Sultanate of Oman — offshore Masirah and inland desert fields",
+        "United Arab Emirates — offshore Abu Dhabi",
+        "Kingdom of Saudi Arabia — Eastern Province gas",
+        "State of Kuwait — non-operated interests",
+        "State of Qatar — non-operated interests"
+      ]
+    },
+    {
+      slug:"gas-lng",
+      note:"A cargo is one shipload. Chilled to liquid, natural gas takes up about one six-hundredth of its normal volume, which is what makes shipping it possible.",
+      title:"Gas & LNG",
+      tag:"Liquefaction and shipping",
+      img:"card_gas",
+      hero:"hero_lng",
+      card:"Chilling natural gas into liquid in Oman, then shipping it to customers in Asia and around the Gulf.",
+      lede:"Gas cannot be shipped as a gas. We cool it until it turns liquid, carry it by sea, and sell it to the customer at the other end.",
+      intro:[
+        "Gas is the part of the business we are growing fastest. Our plant at Ras Meridian has three production lines that cool gas into liquid, and a fourth has been approved. We sell to the end customer ourselves rather than handing the gas over at the factory gate — so we also take on the shipping and the responsibility for arriving on time.",
+        "About 70% of our gas is sold on contracts of five years or more, which keeps income predictable. The rest is sold one shipload at a time at whatever the market pays that week — most valuable in winter, when demand and prices spike."
+      ],
+      specs:{ caption:"Gas and LNG at a glance", rows:[
+        ["Gas we can liquefy each year","14.2 million tonnes"],
+        ["Fourth production line (approved)","5.2 million tonnes a year, first cargo 2029"],
+        ["Shiploads delivered in 2025","208"],
+        ["Ships under charter","11 vessels, 145–174k m³"],
+        ["Sold on long-term contracts","70% of volume"],
+        ["Average contract length","11.4 years"],
+        ["Import terminal space reserved","6.8 million tonnes a year"],
+        ["Gas sold by pipeline","1.9 billion cubic feet a day"],
+        ["Cargo lost in transit, per day","0.11% per day"],
+        ["Deliveries on time, 2025","99.4%"]
+      ]},
+      capabilities:[
+        ["We own every step","The gas field, the plant that liquefies it, the ship that carries it, and the contract with the buyer."],
+        ["Our own ships","We charter and schedule the fleet ourselves, so sending a cargo to a better market is our decision to make."],
+        ["Long-term customers","Multi-year supply agreements with buyers in Japan, Korea and India, and with neighbours in Kuwait and the UAE."],
+        ["Turning it back into gas","Space reserved at two Gulf import terminals, where the liquid is warmed back into gas for local use in summer."],
+        ["Carbon-neutral option","Buyers can ask for a shipment whose emissions have been offset, with the certificates cancelled in their name."]
+      ],
+      deliverables:[
+        "Ras Meridian LNG, Oman — 3 trains operating, Train 4 under construction",
+        "11 chartered carriers on time charter, average age 6 years",
+        "Import terminal space at Mina Al Ahmadi, Kuwait and Jebel Meridian, UAE",
+        "Two 20-year sale and purchase agreements signed in 2025",
+        "Equipment fitted across the fleet to cut cargo lost in transit"
+      ],
+      applications:[
+        "Sultanate of Oman — Ras Meridian gas plant and its gas fields",
+        "State of Qatar — part-owned gas plant",
+        "State of Kuwait — gas import terminal",
+        "United Arab Emirates — gas import terminal",
+        "Sultanate of Oman — Muscat trading and optimisation desk"
+      ]
+    },
+    {
+      slug:"refining-petrochemicals",
+      note:"The complexity rating runs from about 1 to 14 and describes how much processing a refinery can do. A higher number means it can handle cheaper, heavier crude.",
+      title:"Refining & Petrochemicals",
+      tag:"Downstream",
+      img:"card_refining",
+      hero:"hero_refining",
+      card:"Three refineries turning crude oil into fuels, with a chemicals plant next door that makes plastics.",
+      lede:"We turn crude oil into petrol, diesel, jet fuel and the raw material for plastics — including from cheaper, harder-to-process crude.",
+      intro:[
+        "Our three refineries process 640,000 barrels of crude a day. They carry extra processing units that simpler refineries do not have, and that is deliberate: it lets us buy the thick, high-sulphur crude that sells at a discount and still get a high proportion of diesel and jet fuel out of it.",
+        "At Duqm the refinery is joined to a chemicals plant. Rather than selling one of the lighter products at fuel prices, we pipe it next door and turn it into plastic pellets, which are worth considerably more. That link adds around $3.10 of value to every barrel."
+      ],
+      specs:{ caption:"Downstream at a glance", rows:[
+        ["Crude processed each day","640,000 barrels a day"],
+        ["Refineries","3 — Duqm and Sohar in Oman, Umm Sadr in Qatar"],
+        ["Processing complexity rating","9.8"],
+        ["Share of capacity used, 2025","94.1%"],
+        ["Yield of diesel and jet fuel","46%"],
+        ["Ethylene made each year","1.9 million tonnes"],
+        ["Plastic made each year","2.4 million tonnes"],
+        ["Share of crude that is heavy and high-sulphur","58%"],
+        ["Extra value per barrel from chemicals","$3.10"],
+        ["CO₂ per barrel refined","28.4 kg"]
+      ]},
+      capabilities:[
+        ["Handling cheap crude","Extra processing units that break thick, high-sulphur crude down into clean diesel and jet fuel."],
+        ["Refinery and chemicals together","At Duqm the refinery feeds a chemicals plant next door, turning fuel-grade material into higher-value plastic."],
+        ["Low-sulphur fuels","Diesel and ship fuel that meet the strictest sulphur limits, including the global shipping standard."],
+        ["Planned shutdowns","Every five years each plant is shut down and overhauled, timed for when profits are seasonally weakest."],
+        ["Blending in plant oils","Plant-based oils processed alongside crude, currently 4% of everything we put through."]
+      ],
+      deliverables:[
+        "Duqm Meridian refinery and chemicals plant, Oman — 320,000 barrels a day",
+        "Sohar refinery, Oman — 198,000 barrels a day",
+        "Umm Sadr refinery, Qatar — 122,000 barrels a day",
+        "New heavy-oil processing unit opened at Sohar in 2025",
+        "Ship refuelling and fuel blending at Fujairah and Duqm"
+      ],
+      applications:[
+        "Sultanate of Oman — Duqm and Sohar refineries",
+        "State of Qatar — Umm Sadr refinery",
+        "United Arab Emirates — Fujairah ship refuelling",
+        "Sultanate of Oman — Duqm ship refuelling",
+        "Kingdom of Saudi Arabia — plastics distribution"
+      ]
+    },
+    {
+      slug:"pipelines-terminals",
+      note:"Throughput is the volume passing through the system. A berth is the place at a port where a ship ties up to load.",
+      title:"Pipelines & Terminals",
+      tag:"Midstream",
+      img:"card_midstream",
+      hero:"hero_terminal",
+      card:"6,800 km of pipeline, 24 storage terminals and four deep-water ports, all run from one control room.",
+      lede:"The pipes, tanks and ports that carry oil and gas from the well to the ship. The least glamorous business we run, and the steadiest.",
+      intro:[
+        "This is the steadiest part of the company. About 80% of its income comes from fixed fees: customers pay to reserve space in our pipelines and tanks whether they end up using it or not. Because that income barely moves with the oil price, this business pays for its own expansion.",
+        "One control room watches the whole network, with leak detection on every line and robotic inspection tools sent through the pipes on a published schedule. Just under half the volume we carry belongs to other companies — competitors included, who pay to use our pipes."
+      ],
+      specs:{ caption:"Midstream at a glance", rows:[
+        ["Pipeline network","6,800 km"],
+        ["Oil and fuel moved each day","2.4 million barrels a day"],
+        ["Storage terminals","24"],
+        ["Total storage capacity","31.2 million barrels"],
+        ["Deep-water ship berths","4"],
+        ["Largest tanker we can load","320,000 tonnes"],
+        ["Revenue from fixed fees","81%"],
+        ["Volume carried for other companies","46%"],
+        ["Time the network was running, 2025","99.7%"],
+        ["Reportable spills, 2025","0"]
+      ]},
+      capabilities:[
+        ["Income that does not swing","Customers pay a fixed fee to reserve capacity whether they ship or not, so income barely follows the oil price."],
+        ["One control room","The whole network is watched from a single room, with leak detection and valves that can be shut remotely."],
+        ["Inspected from the inside","Robotic tools are sent through the pipes on a published schedule, and the findings are shared with customers."],
+        ["Keeping grades apart","Different grades of crude are stored and blended separately, so each customer gets exactly what they paid for."],
+        ["Berths for the largest tankers","Deep-water berths that take the biggest crude tankers afloat, with equipment that captures fumes during loading."]
+      ],
+      deliverables:[
+        "Sohar–Duqm crude pipeline, Oman — 1,240 km, 900,000 barrels a day",
+        "Duqm and Sohar terminal network — 18.6 million barrels of storage",
+        "Fujairah products pipeline and berth, UAE",
+        "Al Hadd condensate gathering system, Abu Dhabi",
+        "Two berths upgraded for vapour recovery in 2025"
+      ],
+      applications:[
+        "Sultanate of Oman — Sohar and Duqm ports",
+        "United Arab Emirates — Fujairah and Abu Dhabi",
+        "Kingdom of Saudi Arabia — Eastern Province collection lines",
+        "Kingdom of Bahrain — products storage",
+        "Third-party shipper services across the Gulf"
+      ]
+    },
+    {
+      slug:"energy-transition",
+      note:"These cover emissions from our own operations and from the electricity we buy. A gigawatt is roughly the output of one large power station.",
+      title:"Energy Transition",
+      tag:"Lower carbon",
+      img:"card_transition",
+      hero:"hero_shipping",
+      card:"Cutting our own emissions: capturing carbon, stopping gas leaks, and 1.4 GW of solar and wind.",
+      lede:"Cutting the emissions from our own operations, capturing the carbon we cannot avoid, and building solar and wind to power our sites.",
+      intro:[
+        "We spend 18% of the company's total budget on lowering emissions, and we report it as a business in its own right, held to the same financial standards as everything else. None of it is paid for from a side account or left out of the main figures.",
+        "We tackle it in a deliberate order. Stopping methane leaks comes first, because it is the cheapest way to remove a tonne of emissions and the technology to measure it is now reliable. Capturing carbon dioxide comes second, fitted to the plants that will still be running in 2040. Solar and wind come third, sized to cover the electricity our own sites buy from the grid."
+      ],
+      specs:{ caption:"Transition at a glance", rows:[
+        ["Share of company investment","18%"],
+        ["Solar and wind running now","1.4 gigawatts"],
+        ["Solar and wind being built","0.9 gigawatts"],
+        ["CO₂ we can capture each year","2.5 million tonnes"],
+        ["CO₂ stored underground so far","4.1 million tonnes"],
+        ["Methane lost, as a share of gas sold","0.11% of gas marketed"],
+        ["Routine flaring ends by","2028"],
+        ["Emissions cut since 2019","−31%"],
+        ["Reporting standard","OGMP 2.0, Gold Standard"],
+        ["Target for 2030","−50% vs. 2019"]
+      ]},
+      capabilities:[
+        ["Finding leaks","Every site we run is monitored continuously for methane leaks, cross-checked by satellite and drone surveys."],
+        ["Capturing carbon dioxide","Carbon dioxide is captured at the Sohar refinery and the Ras Meridian gas plant, then stored deep underground."],
+        ["Powering our own sites","Solar and wind farms built to replace the grid electricity our own facilities would otherwise buy."],
+        ["No more routine flaring","Ending the routine burning-off of unwanted gas at our sites, with an audited deadline of 2028."],
+        ["Checked by outsiders","Our emissions figures are audited by an independent firm, not simply reported by us."]
+      ],
+      deliverables:[
+        "Ibri West solar complex, Oman — 640 MW operating",
+        "Dhofar Ridge wind farms, Oman — 760 MW combined",
+        "Sohar carbon capture and storage, Oman — 2.5 million tonnes a year",
+        "Fleet-wide methane monitoring completed 2025",
+        "OGMP 2.0 Gold Standard maintained for a third year"
+      ],
+      applications:[
+        "Sultanate of Oman — Ibri solar generation",
+        "Sultanate of Oman — Dhofar onshore wind",
+        "Sultanate of Oman — Sohar carbon capture and storage",
+        "United Arab Emirates — methane abatement programme",
+        "Sultanate of Oman — green hydrogen feasibility study"
+      ]
+    }
+  ];
+
+  var SLIDES = [
+    { img:"hero_upstream", eyebrow:"Exploration & Production",
+      h:"Energy that has to arrive.",
+      p:"We produce the equivalent of 412,000 barrels of oil every day across six Gulf countries — and we run most of those fields ourselves.",
+      href:"#/services/exploration-production", cta:"Our upstream business", nav:"Exploration & Production" },
+    { img:"hero_lng", eyebrow:"Gas & LNG",
+      h:"Gas, from the ground to the customer.",
+      p:"Natural gas has to be chilled into a liquid before it can cross an ocean. We do that, then ship it ourselves — 14.2 million tonnes a year on a fleet of eleven vessels.",
+      href:"#/services/gas-lng", cta:"Our gas and LNG business", nav:"Gas & LNG" },
+    { img:"hero_refining", eyebrow:"Refining & Petrochemicals",
+      h:"Built for the difficult barrels.",
+      p:"Our three refineries turn 640,000 barrels a day into fuels and plastics — including the thick, high-sulphur crude that most refineries cannot process.",
+      href:"#/services/refining-petrochemicals", cta:"Our downstream business", nav:"Refining & Petrochemicals" },
+    { img:"hero_terminal", eyebrow:"Pipelines & Terminals",
+      h:"The network that never stops.",
+      p:"6,800 kilometres of pipeline and 31 million barrels of storage carry oil and gas to port, running 99.7% of the time.",
+      href:"#/services/pipelines-terminals", cta:"Our midstream business", nav:"Pipelines & Terminals" },
+    { img:"hero_shipping", eyebrow:"Energy Transition",
+      h:"Lower emissions, with deadlines.",
+      p:"We spend 18% of our budget on cutting emissions: capturing 2.5 million tonnes of carbon dioxide a year, and ending routine gas burning by 2028.",
+      href:"#/services/energy-transition", cta:"Our transition programme", nav:"Energy Transition" }
+  ];
+
+  var NEWS = [
+    { date:"27 August 2026", cat:"Gas & LNG", title:"Fourth production line approved at Ras Meridian",
+      body:"The new line adds 5.2 million tonnes a year, taking the plant to 19.4 million in total. The first shipment is due in 2029, and 78% of it is already sold." },
+    { date:"14 July 2026", cat:"Upstream", title:"First oil from the Al Hadd East field, offshore Abu Dhabi",
+      body:"Four new wells were piped back to the existing Al Hadd platform and began producing eleven weeks early, adding 34,000 barrels a day at peak." },
+    { date:"09 June 2026", cat:"Energy transition", title:"Sohar carbon capture reaches two million tonnes stored",
+      body:"The plant has now pumped 2.04 million tonnes of carbon dioxide underground since it opened, running at 96% of its design capacity this year." },
+    { date:"21 May 2026", cat:"Downstream", title:"Duqm Meridian completes its biggest maintenance shutdown since 2018",
+      body:"The 42-day shutdown overhauled the main processing units, finished four days early, and passed without a single injury causing lost time." }
+  ];
+
+  var STANDARDS = ["OGMP 2.0 Gold Standard","IPIECA sustainability reporting","ISO 14001","ISO 45001","IOGP member","TCFD aligned","API standards","IMO 2020 compliant"];
+
+  var CHAIN = [
+    { step:"01", h:"Explore", p:"Surveying the rock, drilling test wells and winning licences — mostly close to fields we already run.", dur:"2 – 6 years" },
+    { step:"02", h:"Produce", p:"Platforms and onshore wells bring the oil and gas up, then separate it into oil, gas and water.", dur:"20 – 40 year field life" },
+    { step:"03", h:"Move", p:"Pipelines, storage tanks and ports carry it onward to the refineries and to waiting ships.", dur:"Continuous" },
+    { step:"04", h:"Process", p:"Refineries and gas plants turn it into petrol, diesel, plastics and liquefied gas.", dur:"Continuous" },
+    { step:"05", h:"Market", p:"We sell it on long contracts and in open markets — and we are the ones responsible for delivering it.", dur:"1 – 20 year contracts" }
+  ];
+
+  var OFFICES = [
+    { name:"Global headquarters", city:"Muscat, Sultanate of Oman",
+      lines:["Office 312, Qurum Business Centre","Way 2817, Qurum, Muscat","Sultanate of Oman"],
+      rows:[["Main","+968 2455 0170"],["Media","+968 2455 0155"],["Email","enquiries@meridianpetroleum.example"],["Hours","Sun – Thu, 07:30 – 17:00 GST"]] },
+    { name:"United Arab Emirates", city:"Abu Dhabi",
+      lines:["Al Sila Tower, Al Maryah Island","Abu Dhabi","United Arab Emirates"],
+      rows:[["Main","+971 2 555 0140"],["Operations","+971 2 555 0141"],["Email","abudhabi@meridianpetroleum.example"],["Hours","Mon – Fri, 08:00 – 17:30 GST"]] },
+    { name:"Kingdom of Saudi Arabia",  city:"Al Khobar, Eastern Province",
+      lines:["Rakah Business Gate, King Faisal Road","Al Khobar 34423","Kingdom of Saudi Arabia"],
+      rows:[["Main","+966 13 555 0128"],["Operations","+966 13 555 0130"],["Email","alkhobar@meridianpetroleum.example"],["Hours","Sun – Thu, 08:00 – 17:00 AST"]] }
+  ];
+
+  /* helpers */
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];}); }
+  function svcBySlug(sl){ for(var i=0;i<SERVICES.length;i++){ if(SERVICES[i].slug===sl) return SERVICES[i]; } return null; }
+  var ARROW = '<svg class="arrow" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true" fill="none"><path d="M2 7h9M7.5 3.5 11 7l-3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+  /* "412,000 barrels a day" -> figure "412,000", unit "barrels" so the number can lead */
+  function splitStat(v){
+    var m = /^([^\s]*\d[^\s]*)\s*(.*)$/.exec(v);
+    if(!m) return {fig:v, unit:""};
+    var STOP = /^(across|of|per|in|on|at|with|to|and|a|the|incl\.?|including)$/i;
+    var words = m[2].split(/[,;(—]/)[0].trim().split(/\s+/), unit = [];
+    for(var i=0; i<words.length && unit.length<2; i++){
+      if(!words[i] || STOP.test(words[i]) || /\d/.test(words[i])) break;
+      unit.push(words[i]);
+    }
+    return {fig:m[1], unit:unit.join(" ")};
+  }
+  /* "Masirah Deep hub, offshore Oman - 2 FPSOs" -> the two halves */
+  function splitDash(v){
+    var i = v.indexOf(" \u2014 ");
+    return i < 0 ? [v, ""] : [v.slice(0,i), v.slice(i+3)];
+  }
+  function statBand(rows){
+    return '<section class="kpiband"><div class="wrap"><dl class="kpis">'+
+      rows.slice(0,4).map(function(r){
+        var st = splitStat(r[1]);
+        return '<div><dt>'+esc(r[0])+'</dt><dd><span class="fig">'+esc(st.fig)+'</span>'+
+               (st.unit ? '<span class="unit">'+esc(st.unit)+'</span>' : '')+'</dd></div>';
+      }).join("")+'</dl></div></section>';
+  }
+  function specGrid(rows){
+    return '<dl class="specs">'+rows.slice(4).map(function(r){
+      return '<div><dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd></div>';
+    }).join("")+'</dl>';
+  }
+  function assetRegister(items){
+    return '<div class="regwrap"><table class="register">'+
+      '<thead><tr><th scope="col">Asset</th><th scope="col">Capacity and scope</th></tr></thead><tbody>'+
+      items.map(function(it){
+        var d = splitDash(it);
+        return '<tr><td class="nm">'+esc(d[0])+'</td><td class="sc">'+(d[1] ? esc(d[1]) : "&#8212;")+'</td></tr>';
+      }).join("")+'</tbody></table></div>';
+  }
+  function serviceCard(s){
+    return '<article class="svc-card">'+
+      '<div class="svc-art"><img src="'+IMG[s.img]+'" alt="'+esc(s.title)+'" loading="lazy"><span class="tagchip">'+esc(s.tag)+'</span></div>'+
+      '<div class="svc-body">'+
+        '<h3><a href="#/services/'+s.slug+'">'+esc(s.title)+'</a></h3>'+
+        '<p>'+esc(s.card)+'</p>'+
+        '<a class="cardlink" href="#/services/'+s.slug+'">Learn more '+ARROW+'</a>'+
+      '</div></article>';
+  }
+  function ctaBand(){
+    return '<section class="cta"><div class="wrap">'+
+      '<div class="cta-copy">'+
+        '<p class="eyebrow" style="color:var(--brass-bright)">Get in touch</p>'+
+        '<h2>Investor, partner, supplier or press.</h2>'+
+        '<p class="lede">One enquiry desk routes to the right team across Muscat, Abu Dhabi and Al Khobar. Media requests are answered the same working day.</p>'+
+      '</div>'+
+      '<div class="cta-actions">'+
+        '<a class="btn btn-primary" href="#/contact">Contact us '+ARROW+'</a>'+
+        '<a class="btn btn-ghost" href="#/services">Our services</a>'+
+      '</div></div></section>';
+  }
+  function standardsBand(){
+    return '<section class="standards"><div class="wrap"><span class="lab">Reported under</span><ul>'+
+      STANDARDS.map(function(s){ return '<li>'+esc(s)+'</li>'; }).join("")+'</ul></div></section>';
+  }
+
+  /* pages */
+  function pageHome(){
+    var slides = SLIDES.map(function(s,i){
+      return '<div class="slide'+(i===0?' is-active':'')+'" data-i="'+i+'" style="background-image:url('+IMG[s.img]+')" role="img" aria-label="'+esc(s.eyebrow)+'"></div>';
+    }).join("");
+    var copies = SLIDES.map(function(s,i){
+      return '<div class="stage-copy'+(i===0?' is-active':'')+'" data-i="'+i+'">'+
+        '<p class="eyebrow">'+esc(s.eyebrow)+'</p>'+
+        '<h1>'+esc(s.h)+'</h1>'+
+        '<p class="lede">'+esc(s.p)+'</p>'+
+        '<div class="stage-actions"><a class="btn btn-primary" href="'+s.href+'">'+esc(s.cta)+' '+ARROW+'</a>'+
+        '<a class="btn btn-ghost" href="#/services">All services</a></div>'+
+      '</div>';
+    }).join("");
+    var dots = SLIDES.map(function(s,i){
+      return '<button class="dot" type="button" role="tab" data-i="'+i+'" aria-selected="'+(i===0?'true':'false')+'">'+
+        '<span class="n">0'+(i+1)+'</span><span class="t">'+esc(s.nav)+'</span></button>';
+    }).join("");
+
+    return '<section class="stage" id="stage" aria-label="Meridian businesses">'+
+        '<div class="slides">'+slides+'</div>'+
+        '<div class="stage-scrim"></div>'+
+        '<div class="stage-inner wrap">'+copies+'</div>'+
+        '<div class="stage-nav"><div class="wrap" role="tablist" aria-label="Choose a business">'+dots+'</div></div>'+
+      '</section>'+
+
+      '<section class="section"><div class="wrap">'+
+        '<dl class="creds">'+
+          '<div><dt>Production we operate</dt><dd>412,000<small> barrels a day</small></dd></div>'+
+          '<div><dt>Proven reserves</dt><dd>2.14<small> bn barrels</small></dd></div>'+
+          '<div><dt>Refining capacity</dt><dd>640,000<small> barrels a day</small></dd></div>'+
+          '<div><dt>Gas liquefied a year</dt><dd>14.2<small> m tonnes</small></dd></div>'+
+        '</dl>'+
+      '</div></section>'+
+
+      '<section class="section section--alt"><div class="wrap">'+
+        '<div class="sechead-row"><div class="sechead">'+
+          '<p class="eyebrow">Services</p>'+
+          '<h2>Five businesses, one value chain.</h2>'+
+          '<p class="lede">Meridian follows the oil and gas from the ground all the way to the customer. Each of the five businesses has to pay its own way, and each is measured on the same emissions record.</p>'+
+        '</div><a class="btn btn-outline" href="#/services">All services '+ARROW+'</a></div>'+
+        '<div class="svc-grid">'+SERVICES.map(serviceCard).join("")+'</div>'+
+      '</div></section>'+
+
+      '<section class="section"><div class="wrap">'+
+        '<div class="sechead">'+
+          '<p class="eyebrow">How the chain works</p>'+
+          '<h2>From licence award to delivered cargo.</h2>'+
+          '<p class="lede">Owning the whole chain only counts for something if you genuinely run every link in it. These are the five stages Meridian handles itself rather than hiring out.</p>'+
+        '</div>'+
+        '<ol class="seq">'+CHAIN.map(function(s){
+          return '<li><span class="step">'+esc(s.step)+'</span><h3>'+esc(s.h)+'</h3><p>'+esc(s.p)+'</p><span class="dur">'+esc(s.dur)+'</span></li>';
+        }).join("")+'</ol>'+
+      '</div></section>'+
+
+      '<section class="feature" style="background-image:url('+IMG.band_plant+')"><div class="wrap">'+
+        '<p class="eyebrow">Operating discipline</p>'+
+        '<h2>Safety and emissions are reported like production.</h2>'+
+        '<p class="lede">We publish safety and emissions figures every quarter, next to the production numbers and checked by the same auditors — because a number that appears once a year is a number nobody actually manages.</p>'+
+        '<a class="btn btn-primary" href="#/services/energy-transition">Energy transition '+ARROW+'</a>'+
+      '</div></section>'+
+
+      standardsBand()+
+
+      '<section class="section"><div class="wrap">'+
+        '<div class="sechead-row"><div class="sechead">'+
+          '<p class="eyebrow">Newsroom</p><h2>Latest from Meridian.</h2>'+
+        '</div><a class="btn btn-outline" href="#/contact">Media enquiries '+ARROW+'</a></div>'+
+        '<div class="news">'+NEWS.map(function(n){
+          return '<article><div class="meta"><span class="cat">'+esc(n.cat)+'</span><span>'+esc(n.date)+'</span></div>'+
+            '<h3>'+esc(n.title)+'</h3><p>'+esc(n.body)+'</p></article>';
+        }).join("")+'</div>'+
+      '</div></section>'+
+
+      ctaBand();
+  }
+
+  function pageServices(){
+    return '<section class="pagehead pagehead--photo" style="background-image:url('+IMG.hero_refining+')"><div class="wrap">'+
+        '<nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span>/</span>Services</nav>'+
+        '<h1>Services</h1>'+
+        '<p class="lede">Five businesses spanning exploration and production, gas and LNG, refining and petrochemicals, pipelines and terminals, and the energy transition programme.</p>'+
+      '</div></section>'+
+      '<section class="section"><div class="wrap">'+
+        '<div class="sechead">'+
+          '<p class="eyebrow">What we do</p>'+
+          '<h2>An integrated position, held on purpose.</h2>'+
+          '<p class="lede">In oil and gas, a great deal is won or lost at the handovers: field to pipeline, pipeline to plant, plant to customer. Meridian owns those handovers instead of hiring other firms to do them, which is why the five businesses below are run as a single chain.</p>'+
+        '</div>'+
+        '<div class="svc-grid">'+SERVICES.map(serviceCard).join("")+'</div>'+
+      '</div></section>'+
+      standardsBand()+ctaBand();
+  }
+
+  function pageService(slug){
+    var s = svcBySlug(slug);
+    if(!s) return pageNotFound();
+    var related = SERVICES.filter(function(x){ return x.slug!==slug; });
+    return '<section class="pagehead pagehead--photo" style="background-image:url('+IMG[s.hero]+')"><div class="wrap">'+
+        '<nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span>/</span><a href="#/services">Services</a><span>/</span>'+esc(s.title)+'</nav>'+
+        '<h1>'+esc(s.title)+'</h1><p class="lede">'+esc(s.lede)+'</p>'+
+      '</div></section>'+
+      statBand(s.specs.rows)+
+      '<section class="section"><div class="wrap detail">'+
+        '<div class="detail-main">'+
+          '<div class="block prose">'+s.intro.map(function(p){return '<p>'+esc(p)+'</p>';}).join("")+'</div>'+
+          '<div class="block"><p class="eyebrow">Capabilities</p><h2>What this business does</h2>'+
+            '<div class="caps">'+s.capabilities.map(function(c){
+              return '<article><h3>'+esc(c[0])+'</h3><p>'+esc(c[1])+'</p></article>';
+            }).join("")+'</div></div>'+
+          '<div class="block"><p class="eyebrow">Key assets</p><h2>What we operate</h2>'+
+            assetRegister(s.deliverables)+'</div>'+
+          '<div class="block"><p class="eyebrow">Specification</p><h2>'+esc(s.specs.caption)+'</h2>'+
+            specGrid(s.specs.rows)+(s.note ? '<p class="specnote">'+esc(s.note)+'</p>' : '')+'</div>'+
+        '</div>'+
+        '<aside class="aside">'+
+          '<div class="panel"><p class="eyebrow">Where we operate</p>'+
+            '<ul class="geo">'+s.applications.map(function(a){
+              var g = splitDash(a);
+              return '<li><span class="c">'+esc(g[0])+'</span>'+(g[1]?'<span class="a">'+esc(g[1])+'</span>':'')+'</li>';
+            }).join("")+'</ul></div>'+
+          '<div class="panel panel--deep"><p class="eyebrow">Enquiries</p><h3>Talk to this business</h3>'+
+            '<p style="font-size:.9rem">Partnership, supply and investor questions on '+esc(s.title)+' route through the group enquiry desk.</p>'+
+            '<a class="btn btn-primary btn-sm" href="#/contact" style="align-self:flex-start">Contact us '+ARROW+'</a></div>'+
+          '<div class="panel"><p class="eyebrow">Other businesses</p>'+
+            '<ul class="related">'+related.map(function(r){
+              return '<li><a href="#/services/'+r.slug+'"><span>'+esc(r.title)+'</span>'+ARROW+'</a></li>';
+            }).join("")+'</ul></div>'+
+        '</aside>'+
+      '</div></section>'+ctaBand();
+  }
+
+  function pageContact(){
+    var officeHtml = OFFICES.map(function(o){
+      return '<div class="office"><p class="eyebrow">'+esc(o.name)+'</p><h3>'+esc(o.city)+'</h3>'+
+        '<address>'+o.lines.map(esc).join("<br>")+'</address>'+
+        '<dl>'+o.rows.map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>';}).join("")+'</dl></div>';
+    }).join("");
+    var options = SERVICES.map(function(s){ return '<option value="'+esc(s.title)+'">'+esc(s.title)+'</option>'; }).join("");
+    return '<section class="pagehead pagehead--photo" style="background-image:url('+IMG.hero_terminal+')"><div class="wrap">'+
+        '<nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span>/</span>Contact</nav>'+
+        '<h1>Contact</h1><p class="lede">Three operating bases and one enquiry desk. Tell us which business your question concerns and it goes straight to that team.</p>'+
+      '</div></section>'+
+      '<section class="section"><div class="wrap contact-grid">'+
+        '<div class="offices">'+
+          '<div class="sechead" style="margin-bottom:.25rem"><p class="eyebrow">Offices</p><h2>Where we work from</h2></div>'+
+          officeHtml+
+        '</div>'+
+        '<div>'+
+          '<div class="sechead" style="margin-bottom:1.25rem"><p class="eyebrow">Enquiries</p><h2>Send us a message</h2></div>'+
+          '<form id="quote" novalidate>'+
+            '<div class="field-row">'+
+              '<div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your full name" required><span class="err" data-err="name" hidden>Enter your name</span></div>'+
+              '<div class="field"><label for="f-company">Organisation</label><input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Company or institution"></div>'+
+            '</div>'+
+            '<div class="field-row">'+
+              '<div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="name@company.com" required><span class="err" data-err="email" hidden>Enter a valid email address</span></div>'+
+              '<div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+968 2455 0170"></div>'+
+            '</div>'+
+            '<div class="field-row">'+
+              '<div class="field"><label for="f-service">Business</label><select id="f-service" name="service" data-empty="true"><option value="" disabled selected hidden>Select a business</option>'+options+'<option value="Group / other">Group / other</option></select></div>'+
+              '<div class="field"><label for="f-type">Enquiry type</label><select id="f-type" name="type" data-empty="true"><option value="" disabled selected hidden>Select an enquiry type</option><option>Commercial or partnership</option><option>Supplier registration</option><option>Investor relations</option><option>Media</option><option>Careers</option></select></div>'+
+            '</div>'+
+            '<div class="field"><label for="f-detail">Message</label><textarea id="f-detail" name="detail" placeholder="Tell us what you need and any deadline you are working to"></textarea></div>'+
+            '<div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center">'+
+              '<button class="btn btn-primary" type="submit">Send message '+ARROW+'</button>'+
+              '<p class="formnote" style="flex:1;min-width:180px">Demo site &#8212; nothing is transmitted. Submitting shows a sample confirmation only.</p>'+
+            '</div>'+
+            '<div id="formmsg" class="formmsg" hidden role="status"></div>'+
+          '</form>'+
+        '</div>'+
+      '</div></section>'+standardsBand();
+  }
+
+  function pageNotFound(){
+    return '<section class="pagehead"><div class="wrap">'+
+        '<nav class="crumbs" aria-label="Breadcrumb"><a href="#/">Home</a><span>/</span>Not found</nav>'+
+        '<h1>Page not found</h1><p class="lede">That page is not part of this site. Try the services index below.</p>'+
+      '</div></section>'+
+      '<section class="section"><div class="wrap svc-grid">'+SERVICES.map(serviceCard).join("")+'</div></section>';
+  }
+
+  function subnavFor(route){
+    if(route.indexOf("/services")!==0) return "";
+    return '<nav class="subnav" aria-label="Services"><div class="wrap">'+
+      '<a href="#/services"'+(route==="/services"?' aria-current="page"':'')+'>All services</a>'+
+      SERVICES.map(function(s){
+        return '<a href="#/services/'+s.slug+'"'+(route==="/services/"+s.slug?' aria-current="page"':'')+'>'+esc(s.title)+'</a>';
+      }).join("")+'</div></nav>';
+  }
+
+  /* router */
+  var app=document.getElementById("app"), subnavHost=document.getElementById("subnav");
+  var nav=document.getElementById("nav"), navtoggle=document.getElementById("navtoggle");
+  var stageTimer=null, stagePlay=null, stagePause=null;
+
+  function currentRoute(){
+    var h=location.hash.replace(/^#/,"");
+    if(!h||h==="/") return "/";
+    return h.replace(/\/+$/,"")||"/";
+  }
+
+  function render(){
+    if(stageTimer){ clearInterval(stageTimer); stageTimer=null; }
+    stagePlay=null; stagePause=null;
+    var route=currentRoute(), html, title;
+    if(route==="/"){ html=pageHome(); title="Meridian Petroleum"; }
+    else if(route==="/services"){ html=pageServices(); title="Services — Meridian Petroleum"; }
+    else if(route.indexOf("/services/")===0){
+      var sl=route.slice(10), s=svcBySlug(sl);
+      html=pageService(sl); title=(s?s.title:"Not found")+" — Meridian Petroleum";
+    }
+    else if(route==="/contact"){ html=pageContact(); title="Contact — Meridian Petroleum"; }
+    else { html=pageNotFound(); title="Not found — Meridian Petroleum"; }
+
+    subnavHost.innerHTML=subnavFor(route);
+    app.innerHTML=html;
+    document.title=title;
+
+    var top = route==="/" ? "/" : (route.indexOf("/services")===0 ? "/services" : route);
+    var links=nav.querySelectorAll("a[data-nav]");
+    for(var i=0;i<links.length;i++){
+      if(links[i].getAttribute("data-nav")===top) links[i].setAttribute("aria-current","page");
+      else links[i].removeAttribute("aria-current");
+    }
+    closeNav(); bindForm(); initStage(); window.scrollTo(0,0);
+  }
+
+  /* SLB-style stage: zoom out, crossfade, advance */
+  function initStage(){
+    var stage=document.getElementById("stage");
+    if(!stage) return;
+    var slides=stage.querySelectorAll(".slide");
+    var copies=stage.querySelectorAll(".stage-copy");
+    var dots=stage.querySelectorAll(".dot");
+    var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var cur=0, DUR=9000;
+
+    function show(n){
+      n=(n+SLIDES.length)%SLIDES.length;
+      if(n===cur) return;
+      var prev=cur; cur=n;
+      for(var i=0;i<slides.length;i++){
+        slides[i].classList.remove("was-active");
+        if(i!==n) slides[i].classList.remove("is-active");
+        copies[i].classList.toggle("is-active", i===n);
+        dots[i].setAttribute("aria-selected", i===n?"true":"false");
+      }
+      slides[prev].classList.add("was-active");   /* holds under the incoming slide */
+      var el=slides[n];
+      el.classList.remove("is-active");
+      void el.offsetWidth;                        /* restart the fade + zoom */
+      el.classList.add("is-active");
+    }
+
+    /* A hidden tab freezes CSS animation but not setInterval, so pause with the page. */
+    stagePause = function(){ if(stageTimer){ clearInterval(stageTimer); stageTimer=null; } };
+    stagePlay  = function(){ if(!reduce && !stageTimer && !document.hidden){
+                               stageTimer=setInterval(function(){ show(cur+1); }, DUR); } };
+
+    for(var d=0; d<dots.length; d++){
+      (function(i){
+        dots[i].addEventListener("click", function(){ show(i); stagePause(); stagePlay(); });
+      })(d);
+    }
+
+    stagePlay();
+  }
+
+  document.addEventListener("visibilitychange", function(){
+    if(document.hidden){ if(stagePause) stagePause(); }
+    else { if(stagePlay) stagePlay(); }
+  });
+
+  function isNarrow(){ return window.matchMedia("(max-width:880px)").matches; }
+  function closeNav(){
+    nav.hidden = isNarrow();
+    navtoggle.setAttribute("aria-expanded","false");
+  }
+  navtoggle.addEventListener("click", function(){
+    var open=nav.hidden; nav.hidden=!open;
+    navtoggle.setAttribute("aria-expanded", open?"true":"false");
+  });
+  window.addEventListener("resize", closeNav);
+
+  function bindForm(){
+    var form=document.getElementById("quote");
+    if(!form) return;
+    /* a select still showing its hint stays muted; a real choice goes solid */
+    var sels=form.querySelectorAll("select");
+    function markEmpty(){
+      for(var i=0;i<sels.length;i++) sels[i].setAttribute("data-empty", sels[i].value?"false":"true");
+    }
+    for(var i=0;i<sels.length;i++) sels[i].addEventListener("change", markEmpty);
+    markEmpty();
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var name=form.elements.name.value.trim(), email=form.elements.email.value.trim(), ok=true;
+      var errName=form.querySelector('[data-err="name"]'), errEmail=form.querySelector('[data-err="email"]');
+      errName.hidden=!!name; if(!name) ok=false;
+      var valid=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+      errEmail.hidden=valid; if(!valid) ok=false;
+      var msg=document.getElementById("formmsg");
+      if(!ok){ msg.hidden=true; (name?form.elements.email:form.elements.name).focus(); return; }
+      var biz=form.elements.service.value || "the group enquiry desk";
+      var ref="MP-"+String(Math.floor(Math.random()*9000)+1000);
+      msg.innerHTML="Message received &#8212; reference <b>"+esc(ref)+"</b>. It would normally be routed to "+esc(biz)+
+        " and answered within one working day. This is a demo site, so nothing was actually sent.";
+      msg.hidden=false; form.reset(); markEmpty(); msg.scrollIntoView({behavior:"smooth",block:"center"});
+    });
+  }
+
+  document.getElementById("foot-services").innerHTML = SERVICES.map(function(s){
+    return '<li><a href="#/services/'+s.slug+'">'+esc(s.title)+'</a></li>';
+  }).join("");
+
+  window.addEventListener("hashchange", render);
+  if(!location.hash) location.hash="#/";
+  render();
+})();
+</script>

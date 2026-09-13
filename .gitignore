@@ -1,2 +1,6 @@
 .DS_Store
 Thumbs.db
+__pycache__/
+
+# intermediate build output (index.html is the real artefact)
+src/meridian-petroleum.html
